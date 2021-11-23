@@ -12,7 +12,7 @@
         <nav>
             <a href="#">Admin</a>
             <a href="#">Category</a>
-            <a href="#">Product</a>
+            <a href="manage-product.php">Product</a>
             <a href="#">Staff</a>
         </nav>
     </header>
