@@ -175,6 +175,7 @@
             </div>
         </header>
         <!-- END HEADER-->
+        
         <!-- START SIDEBAR-->
         <nav class="page-sidebar" id="sidebar">
             <div id="sidebar-collapse">
@@ -218,112 +219,76 @@
             </div>
         </nav>
         <!-- END SIDEBAR-->
+
         <div class="content-wrapper">
-            <!-- START PAGE CONTENT-->
-            <div class="ibox">
-                <div class="ibox-head">
-                    <div class="ibox-title">Responsive Table</div>
-                </div>
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th width="50px"></th>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Data</th>
-                                    <th>Last Name</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <label class="ui-checkbox">
-                                            <input type="checkbox">
-                                            <span class="input-span"></span>
-                                        </label>
-                                    </td>
-                                    <td>iphone case</td>
-                                    <td>$1200</td>
-                                    <td>33%</td>
-                                    <td>02/08/2017</td>
-                                    <td>
-                                        <a href="add-products.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
-                                        <button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
-                                        <button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="ui-checkbox">
-                                            <input type="checkbox">
-                                            <span class="input-span"></span>
-                                        </label>
-                                    </td>
-                                    <td>Car covers</td>
-                                    <td>$3280</td>
-                                    <td>42%</td>
-                                    <td>08/10/2017</td>
-                                    <td>
-                                        <a href="add-products.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
-                                        <button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
-                                        <button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="ui-checkbox">
-                                            <input type="checkbox">
-                                            <span class="input-span"></span>
-                                        </label>
-                                    </td>
-                                    <td>Compressors</td>
-                                    <td>$7400</td>
-                                    <td>56%</td>
-                                    <td>14/11/2017</td>
-                                    <td>
-                                        <a href="add-products.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
-                                        <button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
-                                        <button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="col-md-6">
+                <div class="ibox">
+                    <div class="ibox-head">
+                        <div class="ibox-title">Add Product</div>
+                        <div class="ibox-tools">
+                            <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                            <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
+                        </div>
+                    </div>
+                    <div class="ibox-body">
+                        <form class="form-horizontal">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Gender</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10 ml-sm-auto">
+                                    <label class="ui-checkbox ui-checkbox-gray">
+                                        <input type="checkbox">
+                                        <span class="input-span"></span>Remamber me</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10 ml-sm-auto">
+                                    <button class="btn btn-info" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-            <!-- END PAGE CONTENT-->
         </div>
 
+        <!-- BEGIN PAGA BACKDROPS-->
+        <div class="sidenav-backdrop backdrop"></div>
+        <div class="preloader-backdrop">
+            <div class="page-preloader">Loading</div>
+        </div>
+        <!-- END PAGA BACKDROPS-->
+        <!-- CORE PLUGINS-->
+        <script src="./assets/vendors/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/metisMenu/dist/metisMenu.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <!-- PAGE LEVEL PLUGINS-->
+        <script src="./assets/vendors/chart.js/dist/Chart.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.min.js" type="text/javascript"></script>
+        <script src="./assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <script src="./assets/vendors/jvectormap/jquery-jvectormap-us-aea-en.js" type="text/javascript"></script>
+        <!-- CORE SCRIPTS-->
+        <script src="assets/js/app.min.js" type="text/javascript"></script>
+        <!-- PAGE LEVEL SCRIPTS-->
+        <script src="./assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
+    </body>
 
-
-    <!-- BEGIN THEME CONFIG PANEL-->
-
-    <!-- END THEME CONFIG PANEL-->
-    <!-- BEGIN PAGA BACKDROPS-->
-    <div class="sidenav-backdrop backdrop"></div>
-    <div class="preloader-backdrop">
-        <div class="page-preloader">Loading</div>
-    </div>
-    <!-- END PAGA BACKDROPS-->
-    <!-- CORE PLUGINS-->
-    <script src="./assets/vendors/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/metisMenu/dist/metisMenu.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- PAGE LEVEL PLUGINS-->
-    <script src="./assets/vendors/chart.js/dist/Chart.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
-    <script src="./assets/vendors/jvectormap/jquery-jvectormap-us-aea-en.js" type="text/javascript"></script>
-    <!-- CORE SCRIPTS-->
-    <script src="assets/js/app.min.js" type="text/javascript"></script>
-    <!-- PAGE LEVEL SCRIPTS-->
-    <script src="./assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
-</body>
-
-</html>
+    </html>
