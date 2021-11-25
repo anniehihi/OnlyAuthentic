@@ -1,4 +1,8 @@
 <?php 
+    // start session
+    session_start();
+
+    define('SITEURL', 'http://localhost/OnlyAuthentic/');
     define('LOCALHOST', 'localhost'); 
     define('DB_USERNAME', 'root'); 
     define('DB_PASSWORD', ''); 

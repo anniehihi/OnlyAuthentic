@@ -1,3 +1,5 @@
+<?php include('../config/constants.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
         <!-- START HEADER-->
         <header class="header">
             <div class="page-brand">
-                <a class="link" href="index.html">
+                <a class="link" href="index.php">
                     <span class="brand">OnlyAuthentic
                     </span>
                     <span class="brand-mini">AC</span>
@@ -188,7 +190,7 @@
                 </div>
                 <ul class="side-menu metismenu">
                     <li>
-                        <a class="active" href="index.html"><i class="sidebar-item-icon fa fa-th-large"></i>
+                        <a class="active" href="index.php"><i class="sidebar-item-icon fa fa-th-large"></i>
                             <span class="nav-label">Dashboard</span>
                         </a>
                     </li>
@@ -198,19 +200,19 @@
                             <span class="nav-label">Manage</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="colors.html">Manage Admin</a>
+                                <a href="manage-admin.php">Manage Admin</a>
                             </li>
 
                             <li>
-                                <a href="manage-category.html">Manage Category</a>
+                                <a href="manage-category.php">Manage Category</a>
                             </li>
 
                             <li>
-                                <a href="manage-products.html">Manage Products</a>
+                                <a href="manage-products.php">Manage Products</a>
                             </li>
 
                             <li>
-                                <a href="manage-staff.html">Manage Staff</a>
+                                <a href="manage-staff.php">Manage Staff</a>
                             </li>
                         </ul>
                     </li>
@@ -219,76 +221,4 @@
             </div>
         </nav>
         <!-- END SIDEBAR-->
-
         <div class="content-wrapper">
-            <div class="col-md-6">
-                <div class="ibox">
-                    <div class="ibox-head">
-                        <div class="ibox-title">Add Category</div>
-                        <div class="ibox-tools">
-                            <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
-                            <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
-                        </div>
-                    </div>
-                    <div class="ibox-body">
-                        <form class="form-horizontal">
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="text" placeholder="Email address">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="password" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Gender</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="password" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 ml-sm-auto">
-                                    <label class="ui-checkbox ui-checkbox-gray">
-                                        <input type="checkbox">
-                                        <span class="input-span"></span>Remamber me</label>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 ml-sm-auto">
-                                    <button class="btn btn-info" type="submit">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- BEGIN PAGA BACKDROPS-->
-        <div class="sidenav-backdrop backdrop"></div>
-        <div class="preloader-backdrop">
-            <div class="page-preloader">Loading</div>
-        </div>
-        <!-- END PAGA BACKDROPS-->
-        <!-- CORE PLUGINS-->
-        <script src="./assets/vendors/jquery/dist/jquery.min.js" type="text/javascript"></script>
-        <script src="./assets/vendors/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
-        <script src="./assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="./assets/vendors/metisMenu/dist/metisMenu.min.js" type="text/javascript"></script>
-        <script src="./assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-        <!-- PAGE LEVEL PLUGINS-->
-        <script src="./assets/vendors/chart.js/dist/Chart.min.js" type="text/javascript"></script>
-        <script src="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.min.js" type="text/javascript"></script>
-        <script src="./assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
-        <script src="./assets/vendors/jvectormap/jquery-jvectormap-us-aea-en.js" type="text/javascript"></script>
-        <!-- CORE SCRIPTS-->
-        <script src="assets/js/app.min.js" type="text/javascript"></script>
-        <!-- PAGE LEVEL SCRIPTS-->
-        <script src="./assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
-    </body>
-
-    </html>
