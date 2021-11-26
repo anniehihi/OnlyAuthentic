@@ -67,14 +67,46 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">
-                                    <input class="btn btn-info" type="submit" name="submit" value="Add Admin"></input>
+                                    <input type="hidden" name="id" value="<?php echo $id; ?>"></input>
+                                    <input class="btn btn-info" type="submit" name="submit" value="Update Admin"></input>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+                <?php
+                    // kiểm tra xem có bấm nút add admin hay không 
+                    if(isset($_POST['submit'])){
+                        // echo 'oke';
+                        // lấy dữ liệu từ form và update
+                        $id = $_POST['id']; 
+                        $full_name = $_POST['full_name']; 
+                        $username = $_POST['username'];
+
+                        // tạo câu truy vấn để update 
+                        $sql = "UPDATE tbl_admin SET
+                            full_name = '$full_name', 
+                            username = '$username'
+                            WHERE id = '$id'
+                        ";
+
+                        // thực thi câu truy vấn 
+                        $res = mysqli_query($conn, $sql); 
+
+                        // kiểm tra xem câu truy vấn có thực thi đúng hay không 
+                        if($res == TRUE){
+                            // thực hiện đúng và update admin 
+                            $_SESSION['update'] = "<p class='text-success'>Admin Update Successfully</p>";
+                            // chuyến hướng đến trang manage
+                            echo("<script>location.href = '".SITEURL."admin/manage-admin.php';</script>");
+                        }else{
+                            // thực hiện sai 
+                            $_SESSION['update'] = "<p class='text-success'>Failed To Update Admin</p>";
+                            // chuyến hướng đến trang manage
+                            echo("<script>location.href = '".SITEURL."admin/manage-admin.php';</script>");
+                        }
+                    }
+                ?>
             </div>
-
-
 <?php include('./partials/footer.php') ?>
 

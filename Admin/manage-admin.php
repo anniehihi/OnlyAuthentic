@@ -14,6 +14,34 @@
                 }
             ?>
 
+            <?php
+                if(isset($_SESSION['update'])){
+                    echo $_SESSION['update'];
+                    unset($_SESSION['update']);
+                }
+            ?>
+
+            <?php
+                if(isset($_SESSION['user-not-found'])){
+                    echo $_SESSION['user-not-found'];
+                    unset($_SESSION['user-not-found']);
+                }
+            ?>
+
+            <?php
+                if(isset($_SESSION['pwd-not-match'])){
+                    echo $_SESSION['pwd-not-match'];
+                    unset($_SESSION['pwd-not-match']);
+                }
+            ?>
+
+            <?php
+                if(isset($_SESSION['change-pwd'])){
+                    echo $_SESSION['change-pwd'];
+                    unset($_SESSION['change-pwd']);
+                }
+            ?>
+
             <!-- START PAGE CONTENT-->
             <div class="page-heading">
                 <h1 class="page-title">Manage Admin</h1>
@@ -73,6 +101,7 @@
                                                     <td><?php echo $full_name; ?></td>
                                                     <td><?php echo $username ?></td>
                                                     <td>
+                                                        <a href="<?php echo SITEURL; ?>admin/change-password.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Change Password "><i class="fa fa-key font-14"></i></button></a>
                                                         <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
                                                         <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a>
                                                     </td>
