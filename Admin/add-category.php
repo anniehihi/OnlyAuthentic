@@ -1,5 +1,19 @@
 <?php include('./partials/header.php'); ?>
 
+
+            <?php   
+                if(isset($_SESSION['add'])){
+                    echo $_SESSION['add'];
+                    unset($_SESSION['add']);
+                }
+            ?>
+            <?php
+                if(isset($_SESSION['upload'])){
+                    echo $_SESSION['upload'];
+                    unset($_SESSION['upload']);
+                }
+            ?> 
+
             <div class="page-heading">
                 <h1 class="page-title">Add Category</h1>
                 <ol class="breadcrumb">
@@ -19,7 +33,7 @@
                         </div>
                     </div>
                     <div class="ibox-body">
-                        <form class="form-horizontal" action="" method="POST">
+                        <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
@@ -29,7 +43,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Image</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="file" name="image_name">
+                                    <input class="form-control" type="file" name="image">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -74,11 +88,11 @@
                                 </div>
                             </div>
                         </form>
-
-        
                     </div>
                 </div>
             </div>
+        </div>
+<?php include('./partials/footer.php') ?>
 
             <?php
             if(isset($_POST['submit'])){
@@ -104,7 +118,7 @@
 
                         $ext = end(explode('.', $image_name));
 
-                        $image_name = "Apple_Category_".rand(000, 999).'.'.$ext;
+                        $image_name = "Shoe_Category_".rand(000, 999).'.'.$ext;
 
                         $source_path = $_FILES['image']['tmp_name'];
 
@@ -116,7 +130,7 @@
                             // tạo sesion lưu thông báo 
                             $_SESSION['upload'] = "<p class='text-success'>Failed to Upload Image</p>";
                             // chuyến hướng đến trang manage
-                            echo("<script>location.href = '".SITEURL."admin/manage-cateogry.php';</script>");
+                            echo("<script>location.href = '".SITEURL."admin/add-cateogry.php';</script>");
                             die();
                         }
                     }
@@ -151,8 +165,5 @@
                 }
             }
         ?>
-        </div>
-
-<?php include('./partials/footer.php') ?>
 
        
