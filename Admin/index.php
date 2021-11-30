@@ -1,4 +1,10 @@
 <?php include('./partials/header.php'); ?>
+            <?php
+                if(isset($_SESSION['login'])){
+                    echo $_SESSION['login'];
+                    unset($_SESSION['login']);
+                }
+            ?>
             <!-- START PAGE CONTENT-->
             <div class="page-content fade-in-up">
                 <div class="row">

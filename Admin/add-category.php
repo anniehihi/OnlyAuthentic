@@ -94,7 +94,7 @@
         </div>
 <?php include('./partials/footer.php') ?>
 
-            <?php
+        <?php
             if(isset($_POST['submit'])){
                 $title = $_POST['title'];
 
@@ -159,7 +159,7 @@
                     echo("<script>location.href = '".SITEURL."admin/manage-category.php';</script>");
                 }else{
                     // tạo sesion lưu thông báo 
-                    $_SESSION['add'] = "<p class='text-success'>Category Add Successfully</p>";
+                    $_SESSION['add'] = "<p class='text-success'>Failed To Add Category</p>";
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."admin/manage-category.php';</script>");
                 }

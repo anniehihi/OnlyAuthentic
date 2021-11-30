@@ -96,7 +96,7 @@
                                                             if($image_name != ""){
                                                                 ?>
                                                                     <img src="<?php echo SITEURL; ?>img/category/<?php echo $image_name; ?>"
-                                                                    width = "200px">
+                                                                    width = "150px">
                                                                 <?php
                                                             }else{
                                                                 echo "<p class='text-success'>Image Not Added</p>";
