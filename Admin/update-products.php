@@ -1,5 +1,4 @@
 <?php include('./partials/header.php'); ?>
-
             <div class="page-heading">
                 <h1 class="page-title">Update Products</h1>
                 <ol class="breadcrumb">
