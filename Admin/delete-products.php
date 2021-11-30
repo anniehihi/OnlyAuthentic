@@ -3,7 +3,6 @@
 
     if(isset($_GET['id']) AND isset($_GET['image_name']))
     {
-        // echo  "oke";
         $id = $_GET['id'];
         $image_name = $_GET['image_name'];
 
