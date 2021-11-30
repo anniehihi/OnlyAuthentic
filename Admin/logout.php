@@ -1,6 +1,5 @@
 <?php 
     include('../config/constants.php');
-
     session_destroy();
 
     // chuyến hướng đến trang manage
