@@ -108,6 +108,7 @@
 								$image_name = $row['image_name'];
 								?>
     								<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
+										<form action="index.php?action=add_cart&id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" method="post">
 										<div class="product d-flex flex-column">
 											<?php
 												if($image_name==""){
@@ -115,7 +116,7 @@
 												}
 												else{
 													?>
-														<a href="#" class="img-prod"><img class="img-fluid" src="<?php echo SITEURL; ?>img/product/<?php echo $image_name; ?>" alt="Colorlib Template">
+														<a href="product-single.php?id=<?php echo $id; ?>" class="img-prod"><img class="img-fluid" src="<?php echo SITEURL; ?>img/product/<?php echo $image_name; ?>" alt="Colorlib Template">
 															<div class="overlay"></div>
 														</a>
 													<?php
@@ -137,16 +138,18 @@
 														</p>
 													</div>
 												</div>
-												<h3><a href="#">Nike Free RN 2019 iD</a></h3>
+												<h3><a href="#"><?php echo $title;?></a></h3>
 												<div class="pricing">
-													<p class="price"><span>$120.00</span></p>
+													<p class="price"><span>$<?php echo $price; ?></span></p>
 												</div>
 												<p class="bottom-area d-flex px-3">
-													<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-													<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+													<a href="cart-action.php?id=<?php echo $id; ?>" class="add-to-cart text-center py-2 mr-1"><span>Add to cart  <i class="ion-ios-add ml-1"></i></span></a>
+													<!-- <input type="submit" name="add_cart" value = "Add to cart" class="add-to-cart text-center py-2 mr-1"> -->
+													<a href="product-single.php?id=<?php echo $id; ?>" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
 												</p>
 											</div>
 										</div>
+									</form>
 									</div>
 								<?php
 							}

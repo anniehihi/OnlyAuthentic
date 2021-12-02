@@ -1,5 +1,13 @@
 <?php include('partials-front/header.php'); ?>
 
+<?php 
+	$cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : []; 
+
+	// echo '<pre>'; 
+	// print_r($cart);
+	
+?>	
+
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -23,52 +31,40 @@
 						        <th>&nbsp;</th>
 						        <th>Product</th>
 						        <th>Price</th>
-						        <th>Quantity</th>
 						        <th>Total</th>
+						        <th>Quantity</th>
+								<th>Action</th>
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Nike Free RN 2019 iD</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$4.90</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$4.90</td>
-						      </tr><!-- END TR-->
+								<?php foreach ($cart as $key => $value): ?>
+								   	<tr class="text-center">
+										<td class="product-remove"><a href="cart-action.php?id=<?php echo $value['id']; ?>&action=delete"><span class="ion-ios-close"></span></a></td>
 
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Nike Free RN 2019 iD</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$15.70</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+										<td class="image-prod"><div class="img"><img src="img/product/<?php echo $value['image_name']; ?>" width="170px" ></td></div>
+										<td class="product-name">
+											<h3><?php echo $value['title']; ?></h3>
+										</td>
+										<td class="price">$<?php echo $value['price']; ?></td>	
+										<td class="total">$4.90</td>
+										<td class="quantity">
+											<div class="input-group mb-3">
+											<form action="cart-action.php">
+												<input type="hidden" name="action" value="update">
+												<input type="hidden" name="id" value="<?php echo $value['id'] ?>">
+												<input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $value['qty']; ?>" min="1" max="100">
+												<td class="product-remove">
+													<input type="submit" value="Update"></input>
+													<!-- <a href="">
+														<input type="submit" value="Delete"></input>
+													</a> -->
+												</td>
+											</form>
+											</div>
+										</td>
+
+								   </tr>
+								<?php endforeach ?>
 						    </tbody>
 						  </table>
 					  </div>
