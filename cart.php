@@ -37,7 +37,10 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-								<?php foreach ($cart as $key => $value): ?>
+								<?php $total_price = 0; ?>
+								<?php foreach ($cart as $key => $value): 
+									$total_price += ($value['price'] * $value['qty']);
+								?>
 								   	<tr class="text-center">
 										<td class="product-remove"><a href="cart-action.php?id=<?php echo $value['id']; ?>&action=delete"><span class="ion-ios-close"></span></a></td>
 
@@ -46,7 +49,7 @@
 											<h3><?php echo $value['title']; ?></h3>
 										</td>
 										<td class="price">$<?php echo $value['price']; ?></td>	
-										<td class="total">$4.90</td>
+										<td class="total">$<?php echo ($value['price'] * $value['qty']),".00" ?></td>
 										<td class="quantity">
 											<div class="input-group mb-3">
 											<form action="cart-action.php">
@@ -76,23 +79,26 @@
     					<h3>Cart Totals</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$20.60</span>
+    						<span>$<?php echo $total_price,".00"; ?></span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
-    						<span>$0.00</span>
+    						<span>FREE</span>
     					</p>
     					<p class="d-flex">
     						<span>Discount</span>
-    						<span>$3.00</span>
+    						<span>$10.00</span>
     					</p>
     					<hr>
+						<?php
+							$total = $total_price * 0.9;
+						?>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>$17.60</span>
+    						<span>$<?php echo round($total),".00"; ?></span>
     					</p>
     				</div>
-    				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
     			</div>
     		</div>
 			</div>

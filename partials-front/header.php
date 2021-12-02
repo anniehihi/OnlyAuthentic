@@ -1,6 +1,14 @@
 <?php
     include('config/constants.php');
 ?>
+
+<?php 
+	$cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : []; 
+
+	// echo '<pre>'; 
+	// print_r($cart);
+	
+?>	
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -75,7 +83,13 @@
           <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
           <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+          <li class="nav-item"><a href="register.php" class="nav-link">Register</a></li>
+          <?php
+            $count = count($cart); 
+            // var_dump($count); 
+            // die();
+          ?>
+          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php echo $count; ?>]</a></li>
 
         </ul>
       </div>
