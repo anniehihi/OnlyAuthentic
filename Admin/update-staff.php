@@ -104,7 +104,7 @@
                                             <img src = "<?php echo SITEURL; ?>/img/staff/<?php echo $current_image; ?>" width="200px">
                                             <?php
                                         }else{
-                                            echo "<p class='text-success'>Category Not Found</p>";
+                                            echo "<p class='text-success'>Staff Not Found</p>";
                                         }
                                     ?>
                                 </div>
