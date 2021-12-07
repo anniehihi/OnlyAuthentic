@@ -5,7 +5,6 @@
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-
     }
 
     $action = (isset($_GET['action'])) ? $_GET['action'] : 'add'; 
@@ -32,15 +31,14 @@
         'price' => $row['price'], 
         'qty' => $quantity
     ];
+    
     if($action == 'add'){
         if(isset($_SESSION['cart'][$id])){
             $_SESSION['cart'][$id]['qty'] += $quantity;
         }else{
             $_SESSION['cart'][$id] = $item; 
         }
-    }
-
-    if($action == 'update'){
+    }elseif($action == 'update'){
         $_SESSION['cart'][$id]['qty'] = $quantity;
     }elseif($action == 'delete'){
         unset($_SESSION['cart'][$id]);

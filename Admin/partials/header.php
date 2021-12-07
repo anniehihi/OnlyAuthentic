@@ -39,14 +39,7 @@
                     <li>
                         <a class="nav-link sidebar-toggler js-sidebar-toggler"><i class="ti-menu"></i></a>
                     </li>
-                    <li>
-                        <form class="navbar-search" action="javascript:;">
-                            <div class="rel">
-                                <span class="search-icon"><i class="ti-search"></i></span>
-                                <input class="form-control" placeholder="Search here...">
-                            </div>
-                        </form>
-                    </li>
+
                 </ul>
                 <!-- END TOP-LEFT TOOLBAR-->
                 <!-- START TOP-RIGHT TOOLBAR-->
@@ -200,22 +193,28 @@
                     <li class="heading">FEATURES</li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
-                            <span class="nav-label">Manage</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">Quản lý</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="manage-admin.php">Manage Admin</a>
+                                <a href="manage-admin.php">Quản lý admin</a>
                             </li>
 
                             <li>
-                                <a href="manage-category.php">Manage Category</a>
+                                <a href="manage-category.php">Danh mục sản phẩm</a>
                             </li>
 
                             <li>
-                                <a href="manage-products.php">Manage Products</a>
+                                <a href="manage-products.php">Sản phẩm</a>
                             </li>
 
                             <li>
-                                <a href="manage-staff.php">Manage Staff</a>
+                                <a href="manage-staff.php">Nhân viên</a>
+                            </li>
+                            <li>
+                                <a href="manage-bill.php">Khách hàng</a>
+                            </li>
+                            <li>
+                                <a href="manage-bill.php">Hoá đơn</a>
                             </li>
                         </ul>
                     </li>

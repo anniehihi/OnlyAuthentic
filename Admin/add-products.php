@@ -11,7 +11,7 @@
             ?> 
 
             <div class="page-heading">
-                <h1 class="page-title">Add Product</h1>
+                <h1 class="page-title">Thêm sản phẩm</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.html"><i class="la la-home font-20"></i></a>
@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">PRODUCT</div>
+                        <div class="ibox-title">SẢN PHẨM</div>
                         <div class="ibox-tools">
                             <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
                             <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
@@ -31,31 +31,37 @@
                     <div class="ibox-body">
                         <form class="form-horizontal" action = "" method = "POST" enctype="multipart/form-data">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Title</label>
+                                <label class="col-sm-2 col-form-label">Tên sản phẩm</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name=title>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Desctiption</label>
+                                <label class="col-sm-2 col-form-label">Miêu tả</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" ></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Price</label>
+                                <label class="col-sm-2 col-form-label">Giá tiền</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="number" name="price">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Image</label>
+                                <label class="col-sm-2 col-form-label">Ảnh sản phẩm</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="file" name="image">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Category</label>
+                                <label class="col-sm-2 col-form-label">Chi tiết ảnh sản phẩm</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="image_detail">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Danh mục sản phẩm</label>
                                 <div class="col-sm-10">
                                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category">
                                         
@@ -80,7 +86,7 @@
                                         else
                                         {
                                             ?>
-                                            <option value="0">No Category Found</option>
+                                            <option value="0">Không có danh mục sản phẩm</option>
                                             <?php
                                         }
                                     ?>
@@ -91,7 +97,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Featured</label>
+                                <label class="col-sm-2 col-form-label">Đặc sắc</label>
                                 <div class="col-sm-10 ml-sm-auto">
                                     <label class="ui-radio ui-radio-gray">
                                         <input type="radio" name="featured" value="Yes">
@@ -105,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Active</label>
+                                <label class="col-sm-2 col-form-label">Trạng thái</label>
                                 <div class="col-sm-10 ml-sm-auto">
                                     <label class="ui-radio ui-radio-gray">
                                         <input type="radio" name="active" value="Yes">
@@ -165,7 +171,7 @@
 
                         if($upload == false){
                             // tạo sesion lưu thông báo 
-                            $_SESSION['upload'] = "<p class='text-success'>Failed to Upload Image</p>";
+                            $_SESSION['upload'] = "<p class='text-success'>Lỗi thêm ảnh sản phẩm</p>";
                             // chuyến hướng đến trang manage
                             echo("<script>location.href = '".SITEURL."admin/add-products.php';</script>");
                             die();
@@ -175,11 +181,41 @@
                 else{
                     $image_name = "";
                 } 
+
+                // if(isset($_FILES['image_detail']['name'])){
+                //     $image_name_detail = $_FILES['image_detail']['name'];
+
+                //     if($image_name_detail != ""){
+                        
+                //         $ext = end(explode('.', $image_name_detail));
+
+                //         $image_name_detail = "Product_Name_Detail".rand(0000, 9999).'.'.$ext;
+
+                //         $source_path = $_FILES['image_detail']['tmp_name'];
+
+                //         $destination_path = "../img/product_detail/".$image_name_detail;
+
+                //         $upload = move_uploaded_file($source_path, $destination_path);
+
+                //         if($upload == false){
+                //             // tạo sesion lưu thông báo 
+                //             $_SESSION['upload'] = "<p class='text-success'>Lỗi thêm ảnh sản phẩm chi tiết</p>";
+                //             // chuyến hướng đến trang manage
+                //             echo("<script>location.href = '".SITEURL."admin/add-products.php';</script>");
+                //             die();
+                //         }
+                //     }
+                // }
+                // else{
+                //     $image_name_detail = "";
+                // } 
+
                 $sql="INSERT INTO tbl_products SET
                     title = '$title', 
                     description = '$description', 
                     price = '$price', 
                     image_name = '$image_name', 
+                    image_name_detail = '$image_name_detail',
                     category_id = '$category', 
                     featured = '$featured', 
                     active = '$active'
@@ -187,12 +223,12 @@
                 $res = mysqli_query($conn, $sql); 
                 if($res == TRUE){
                     // tạo sesion lưu thông báo 
-                    $_SESSION['add'] = "<p class='text-success'>Product Add Successfully</p>";
+                    $_SESSION['add'] = "<p class='text-success'>Thêm mới sản phẩm thành công</p>";
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."admin/manage-products.php';</script>");
                 }else{
                     // tạo sesion lưu thông báo 
-                    $_SESSION['add'] = "<p class='text-success'>Failed To Add Products</p>";
+                    $_SESSION['add'] = "<p class='text-success'>Lỗi thêm sản phẩm</p>";
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."admin/manage-products.php';</script>");
                 }

@@ -4,8 +4,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Checkout</span></p>
-            <h1 class="mb-0 bread">Checkout</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Trang chủ</a></p>
+            <h1 class="mb-0 bread">Thanh toán</h1>
           </div>
         </div>
       </div>
@@ -16,24 +16,26 @@
         <div class="row justify-content-center">
           <div class="col-xl-10 ftco-animate">
 						<form action="#" class="billing-form">
-							<h3 class="mb-4 billing-heading">Billing Details</h3>
+							<a href="login.php" class="mb-4 billing-heading">Đăng nhập</a>
+							<br><br>
+							<h3 class="mb-4 billing-heading">Chi tiết hoá đơn</h3>
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Firt Name</label>
+	                	<label for="firstname">Họ</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="lastname">Last Name</label>
+	                	<label for="lastname">Tên</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
                 </div>
                 <div class="w-100"></div>
-		            <div class="col-md-12">
+		            <!-- <div class="col-md-12">
 		            	<div class="form-group">
-		            		<label for="country">State / Country</label>
+		            		<label for="country">Quốc gia</label>
 		            		<div class="select-wrap">
 		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
 		                  <select name="" id="" class="form-control">
@@ -43,57 +45,59 @@
 		                    <option value="">South Korea</option>
 		                    <option value="">Hongkong</option>
 		                    <option value="">Japan</option>
+							<option value="">Việt Nam</option>
 		                  </select>
 		                </div>
 		            	</div>
-		            </div>
+		            </div> -->
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                	<label for="streetaddress">Street Address</label>
-	                  <input type="text" class="form-control" placeholder="House number and street name">
-	                </div>
-		            </div>
-		            <div class="col-md-6">
-		            	<div class="form-group">
-	                  <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
-	                </div>
-		            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-6">
-		            	<div class="form-group">
-	                	<label for="towncity">Town / City</label>
+	                	<label for="streetaddress">Địa chỉ</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-		            		<label for="postcodezip">Postcode / ZIP *</label>
+	                	<label for="towncity">Tỉnh/Thành Phố</label>
+	                  <input type="text" class="form-control" placeholder="">
+	                </div>
+		            </div>
+		            <div class="w-100"></div>
+		            <div class="col-md-6">
+		            	<div class="form-group">
+	                	<label for="towncity">Quận/Huyện</label>
+	                  <input type="text" class="form-control" placeholder="">
+	                </div>
+		            </div>
+		            <div class="col-md-6">
+		            	<div class="form-group">
+		            		<label for="postcodezip">Phường/Xã</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="phone">Phone</label>
+	                	<label for="phone">Số điện thoại</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="emailaddress">Email Address</label>
+	                	<label for="emailaddress">Email</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
                 </div>
                 <div class="w-100"></div>
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                 	<div class="form-group mt-4">
 										<div class="radio">
 										  <label class="mr-3"><input type="radio" name="optradio"> Create an Account? </label>
 										  <label><input type="radio" name="optradio"> Ship to different address</label>
 										</div>
 									</div>
-                </div>
+                </div> -->
 	            </div>
 	          </form><!-- END -->
 
@@ -102,58 +106,59 @@
 	          <div class="row mt-5 pt-3 d-flex">
 	          	<div class="col-md-6 d-flex">
 	          		<div class="cart-detail cart-total bg-light p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Cart Total</h3>
+	          			<h3 class="billing-heading mb-4">Tổng giỏ hàng</h3>
 	          			<p class="d-flex">
-		    						<span>Subtotal</span>
+		    						<span>Tạm tính</span>
 		    						<span>$20.60</span>
 		    					</p>
 		    					<p class="d-flex">
-		    						<span>Delivery</span>
+		    						<span>Phí giao hàng</span>
 		    						<span>$0.00</span>
 		    					</p>
 		    					<p class="d-flex">
-		    						<span>Discount</span>
+		    						<span>Giảm giá</span>
 		    						<span>$3.00</span>
 		    					</p>
 		    					<hr>
 		    					<p class="d-flex total-price">
-		    						<span>Total</span>
+		    						<span>Tổng</span>
 		    						<span>$17.60</span>
-		    					</p>
+		    					</p><br><br>
+								<p><a href="cart.php"class="btn btn-primary py-3 px-4">Xem lại giỏ hàng</a></p>
 								</div>
 	          	</div>
 	          	<div class="col-md-6">
 	          		<div class="cart-detail bg-light p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Payment Method</h3>
+	          			<h3 class="billing-heading mb-4">Phương thức thanh toán</h3>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+											   <label><input type="radio" name="optradio" class="mr-2">Thanh toán trực tiếp khi giao hàng</label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
+											   <label><input type="radio" name="optradio" class="mr-2">Chuyển khoản qua thẻ quốc thế và nội địa</label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
+											   <label><input type="radio" name="optradio" class="mr-2">Thanh toán bằng ví MoMo</label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
+											   <label><input type="checkbox" value="" class="mr-2">Tôi đã đọc và chấp nhận các điều khoản và điều kiện</label>
 											</div>
 										</div>
 									</div>
-									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
+									<p><a href="#"class="btn btn-primary py-3 px-4">Đặt hàng</a></p>
 								</div>
 	          	</div>
 	          </div>

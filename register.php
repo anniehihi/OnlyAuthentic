@@ -51,9 +51,9 @@
                 <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
             </div>
             <div class="form-group text-left">
-                <label class="ui-checkbox ui-checkbox-info">
+                <!-- <label class="ui-checkbox ui-checkbox-info">
                     <input type="checkbox" name="agree">
-                    <span class="input-span"></span>I agree the terms and policy</label>
+                    <span class="input-span"></span>I agree the terms and policy</label> -->
             </div>
             <div class="form-group">
                 <input class="btn btn-info btn-block" type="submit" name="submit" value="Sign up"></input>
@@ -69,7 +69,7 @@
                 <a class="btn btn-social-icon btn-vk" href="javascript:;"><i class="fa fa-vk"></i></a>
             </div>
             <div class="text-center">Already a member?
-                <a class="color-blue" href="login.html">Login here</a>
+                <a class="color-blue" href="login.php">Login here</a>
             </div>
         </form>
         <?php
@@ -103,8 +103,6 @@
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."register.php';</script>");
                 }
-            }else{
-                echo "not oke";
             }
         ?>
     </div>
