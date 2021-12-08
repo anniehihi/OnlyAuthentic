@@ -53,7 +53,22 @@
             </div>
             <div class="ibox">
                 <div class="ibox-head">
-                    <a href="add-category.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
+                    <a href="add-category.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>  
+
+
+                    <form action="manage-category.php" method = "POST">
+                        <div class="ibox-head">
+                            <input class="form-control" placeholder="Search here..." type="text" name="product_name">&ensp;
+                            <button type="submit"  name= "search" class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Search"><i class="fa fa-search font-14"></i></button>
+                        </div>
+                    </form>
+                    <?php
+                        $_SESSION['product'] = $_POST;
+                        $search = $_SESSION['product']; 
+                    ?>
+
+                </div>
+                <div class="ibox-head">
                 </div>
                 <div class="ibox-body">
                     <div class="table-responsive">
@@ -69,58 +84,65 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    // câu truy vấn để lấy dữ liệu 
-                                    $sql = "SELECT * FROM tbl_category"; 
+                                    // foreach($search as $key => $value){
+                                    //     if(isset($_POST['search'])){
+                                    //         // câu truy vấn để lấy dữ liệu 
+                                    //         $sql = "SELECT * FROM tbl_category WHERE title LIKE '%$value%'"; 
+                                    //     }else{
+                                            // câu truy vấn để lấy dữ liệu 
+                                            $sql = "SELECT * FROM tbl_category "; 
+                                            // thực thi câu truy vấn
+                                            $res = mysqli_query($conn, $sql); 
 
-                                    // thực thi câu truy vấn
-                                    $res = mysqli_query($conn, $sql); 
+                                            // kiểm tra xem có dữ liệu hay không 
+                                            $count = mysqli_num_rows($res); 
 
-                                    // kiểm tra xem có dữ liệu hay không 
-                                    $count = mysqli_num_rows($res); 
+                                            $sn = 1; 
 
-                                    $sn = 1; 
-
-                                    if($count > 0){
-                                        while($row = mysqli_fetch_assoc($res)){
-                                            $id = $row['id']; 
-                                            $title = $row['title']; 
-                                            $image_name = $row['image_name']; 
-                                            $featured = $row['featured']; 
-                                            $active = $row['active'];
-                                            ?>
-                                                <tr>
-                                                    <td><?php echo $sn++; ?></td>
-                                                    <td><?php echo $title; ?></td>
-                                                    <td>
-                                                        <?php
-                                                            if($image_name != ""){
-                                                                ?>
-                                                                    <img src="<?php echo SITEURL; ?>img/category/<?php echo $image_name; ?>"
-                                                                    width = "150px">
+                                            if($count > 0){
+                                                while($row = mysqli_fetch_assoc($res)){
+                                                    $id = $row['id']; 
+                                                    $title = $row['title']; 
+                                                    $image_name = $row['image_name']; 
+                                                    $featured = $row['featured']; 
+                                                    $active = $row['active'];
+                                                    ?>
+                                                        <tr>
+                                                            <td><?php echo $sn++; ?></td>
+                                                            <td><?php echo $title; ?></td>
+                                                            <td>
                                                                 <?php
-                                                            }else{
-                                                                echo "<p class='text-success'>Image Not Added</p>";
-                                                            }
-                                                        ?>
-                                                    </td>
-                                                    <td><?php echo $featured; ?></td>
-                                                    <td><?php echo $active; ?></td>
-                                                    <td>
-                                                        <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
-                                                        <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a> 
-                                                    </td>
-                                                </tr>
-                                            <?php
-                                        }
-                                    }else{
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <div class='text-success'>Image Not Added</div>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                    }
+                                                                    if($image_name != ""){
+                                                                        ?>
+                                                                            <img src="<?php echo SITEURL; ?>img/category/<?php echo $image_name; ?>"
+                                                                            width = "150px">
+                                                                        <?php
+                                                                    }else{
+                                                                        echo "<p class='text-success'>Image Not Added</p>";
+                                                                    }
+                                                                ?>
+                                                            </td>
+                                                            <td><?php echo $featured; ?></td>
+                                                            <td><?php echo $active; ?></td>
+                                                            <td>
+                                                                <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
+                                                                <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a> 
+                                                            </td>
+                                                        </tr>
+                                                    <?php
+                                                }
+                                            }else{
+                                                ?>
+                                                    <tr>
+                                                        <td>
+                                                            <div class='text-success'>Image Not Added</div>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                            }
+                                    //     }
+                                    // }
+                                    
                                 ?>
                             </tbody>
                         </table>

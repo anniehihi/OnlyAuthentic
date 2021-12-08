@@ -27,7 +27,7 @@
             ?> 
             <!-- START PAGE CONTENT-->
             <div class="page-heading">
-                <h1 class="page-title">Manage Products</h1>
+                <h1 class="page-title">Quản lý sản phẩm</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.php"><i class="la la-home font-20"></i></a>
@@ -36,21 +36,22 @@
             </div>
             <div class="ibox">
                 <div class="ibox-head">
-                    <a href="<?php echo SITEURL; ?>admin/add-products.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
+                    <a href="<?php echo SITEURL; ?>admin/add-products.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Thêm mới"><i class="fa fa-plus font-14"></i></button></a>
                 </div>
                 <div class="ibox-body">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>S.N.</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                    <th>Image</th>
-                                    <th>Featured</th>
-                                    <th>Active</th>
-                                    <th>Action</th>
+                                    <th>STT</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Miêu tả</th>
+                                    <th>Giá tiền</th>
+                                    <th>Hình ảnh</th>
+                                    <!-- <th>Hình ảnh chi tiết</th> -->
+                                    <th>Đặc sắc</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hoạt động</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,11 +69,14 @@
 
                                     if($count > 0){
                                         while($row = mysqli_fetch_assoc($res)){
+                                            // var_dump($row); 
+                                            // die();
                                             $id = $row['id']; 
                                             $title = $row['title']; 
                                             $price = $row['price']; 
                                             $description = $row['description'];
                                             $image_name = $row['image_name']; 
+                                            // $image_name_detail = $row['image_name_detail'];
                                             $featured = $row['featured']; 
                                             $active = $row['active'];
                                             ?>
@@ -89,10 +93,23 @@
                                                                     width = "150px">
                                                                 <?php
                                                             }else{
-                                                                echo "<p class='text-success'>Image Not Added</p>";
+                                                                echo "<p class='text-success'>Lỗi thêm mới ảnh.</p>";
                                                             }
                                                         ?>
                                                     </td>
+                                                    
+                                                    <!-- <td>
+                                                        <?php
+                                                            if($image_name_detail != ""){
+                                                                ?>
+                                                                    <img src="<?php echo SITEURL; ?>img/product_detail/<?php echo $image_name_detail; ?>"
+                                                                    width = "150px">
+                                                                <?php
+                                                            }else{
+                                                                echo "<p class='text-success'>Lỗi thêm mới ảnh.</p>";
+                                                            }
+                                                        ?>
+                                                    </td> -->
 
 
                                                     <td><?php echo $featured; ?></td>
@@ -108,7 +125,7 @@
                                         ?>
                                             <tr>
                                                 <td>
-                                                    <div class='text-success'>Image Not Added</div>
+                                                    <div class='text-success'>Chưa có sản phẩm.</div>
                                                 </td>
                                             </tr>
                                         <?php
