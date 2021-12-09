@@ -165,7 +165,7 @@
                   </div>
                   <div class="text">
                     <p class="mb-4 pl-4 line">Sản phẩm giá phù hợp với túi tiền, nhưng lại rất chất lượng và đáng mua và dùng thử.</p>
-                    <p class="name">Văn Toàn</p>
+                    <p class="name">Ng Văn Toàn</p>
                     <span class="position">Người dùng</span>
                   </div>
                 </div>
