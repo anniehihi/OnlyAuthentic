@@ -4,8 +4,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Shop</span></p>
-            <h1 class="mb-0 bread">Shop</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Trang chủ</a></span></p>
+            <h1 class="mb-0 bread">Chi tiết sản phẩm</h1>
           </div>
         </div>
       </div>
@@ -68,10 +68,10 @@
 									<a href="#"><span class="ion-ios-star-outline"></span></a>
 								</p>
 								<p class="text-left mr-4">
-									<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+									<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Đánh giá</span></a>
 								</p>
 								<p class="text-left">
-									<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+									<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Đã bán</span></a>
 								</p>
 							</div>
 						<p class="price"><span>$<?php echo $price; ?></span></p>
@@ -110,11 +110,11 @@
 
 	          	<div class="w-100"></div>
 	          	<div class="col-md-12">
-	          		<p style="color: #000;">80 piece available</p>
+	          		<p style="color: #000;">Sản phẩm còn: 80</p>
 	          	</div>
           	</div>
 			  <p>
-					<input type="submit" value="Add to cart" class="btn btn-primary py-3 px-5"></input>
+					<input type="submit" value="Thêm vào giỏ hàng" class="btn btn-primary py-3 px-5"></input>
 				</p>
 			</div>
     		</div>
@@ -125,11 +125,11 @@
     		<div class="row mt-5">
           <div class="col-md-12 nav-link-wrap">
             <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Description</a>
+              <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Miêu tả</a>
 
-              <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacturer</a>
+              <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Nhà sản xuất</a>
 
-              <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Reviews</a>
+              <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Đánh giá</a>
 
             </div>
           </div>

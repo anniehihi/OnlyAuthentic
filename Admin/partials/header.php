@@ -165,7 +165,7 @@
                             <a class="dropdown-item" href="profile.html"><i class="fa fa-cog"></i>Settings</a>
                             <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>Support</a>
                             <li class="dropdown-divider"></li>
-                            <a class="dropdown-item" href="login.php"><i class="fa fa-power-off"></i>Logout</a>
+                            <a class="dropdown-item" href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
                         </ul>
                     </li>
                 </ul>
@@ -211,10 +211,10 @@
                                 <a href="manage-staff.php">Nhân viên</a>
                             </li>
                             <li>
-                                <a href="manage-bill.php">Khách hàng</a>
+                                <a href="manage-customer.php">Tài khoản khách hàng</a>
                             </li>
                             <li>
-                                <a href="manage-bill.php">Hoá đơn</a>
+                                <a href="manage-order.php">Đơn hàng</a>
                             </li>
                         </ul>
                     </li>

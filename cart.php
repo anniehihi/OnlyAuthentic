@@ -12,8 +12,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Cart</span></p>
-            <h1 class="mb-0 bread">My Wishlist</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Trang chủ</a></p>
+            <h1 class="mb-0 bread">Giỏ hàng</h1>
           </div>
         </div>
       </div>
@@ -29,11 +29,11 @@
 						      <tr class="text-center">
 						        <th>&nbsp;</th>
 						        <th>&nbsp;</th>
-						        <th>Product</th>
-						        <th>Price</th>
-						        <th>Total</th>
-						        <th>Quantity</th>
-								<th>Action</th>
+						        <th>Tên sản phẩm</th>
+						        <th>Giá tiền</th>
+						        <th>Tổng tiền</th>
+						        <th>Số lượng</th>
+								<th>Hoạt động</th>
 						      </tr>
 						    </thead>
 						    <tbody>
@@ -48,8 +48,8 @@
 										<td class="product-name">
 											<h3><?php echo $value['title']; ?></h3>
 										</td>
-										<td class="price">$<?php echo $value['price']; ?></td>	
-										<td class="total">$<?php echo ($value['price'] * $value['qty']),".00" ?></td>
+										<td class="price"><?php echo number_format($value['price']); ?> VND</td>	
+										<td class="total"><?php echo number_format($value['price'] * $value['qty']); ?> VND</td>
 										<td class="quantity">
 											<div class="input-group mb-3">
 											<form action="cart-action.php">
@@ -57,7 +57,7 @@
 												<input type="hidden" name="id" value="<?php echo $value['id'] ?>">
 												<input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $value['qty']; ?>" min="1" max="100">
 												<td class="product-remove">
-													<input type="submit" value="Update"></input>
+													<input type="submit" value="Cập nhật"></input>
 													<!-- <a href="">
 														<input type="submit" value="Delete"></input>
 													</a> -->
@@ -76,29 +76,30 @@
     		<div class="row justify-content-start">
     			<div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
-    					<h3>Cart Totals</h3>
+    					<h3>Tổng giỏ hàng</h3>
     					<p class="d-flex">
-    						<span>Subtotal</span>
-    						<span>$<?php echo $total_price,".00"; ?></span>
+    						<span>Tạm tính</span>
+    						<span><?php echo number_format( $total_price ); ?> VND</span>
     					</p>
     					<p class="d-flex">
-    						<span>Delivery</span>
-    						<span>FREE</span>
+    						<span>Phí vận chuyển</span>
+    						<span>Miễn phí</span>
     					</p>
     					<p class="d-flex">
-    						<span>Discount</span>
-    						<span>$10.00</span>
+    						<span>Giảm giá</span>
+    						<span>10%</span>
     					</p>
     					<hr>
 						<?php
 							$total = $total_price * 0.9;
+							// $_SESSION['total'] = $total;
 						?>
     					<p class="d-flex total-price">
-    						<span>Total</span>
-    						<span>$<?php echo round($total),".00"; ?></span>
+    						<span>Tổng</span>
+    						<span><?php echo number_format($total); ?> VND</span>
     					</p>
     				</div>
-    				<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
     			</div>
     		</div>
 			</div>

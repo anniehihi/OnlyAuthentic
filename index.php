@@ -140,7 +140,7 @@
 												</div>
 												<h3><a href="#"><?php echo $title;?></a></h3>
 												<div class="pricing">
-													<p class="price"><span>$<?php echo $price; ?></span></p>
+													<p class="price"><span><?php echo number_format($price); ?> VND</span></p>
 												</div>
 												<p class="bottom-area d-flex px-3">
 													<a href="cart-action.php?id=<?php echo $id; ?>" class="add-to-cart text-center py-2 mr-1"><span>Thêm vào giỏ<i class="ion-ios-add ml-1"></i></span></a>

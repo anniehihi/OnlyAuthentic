@@ -7,7 +7,7 @@
 
 	// echo '<pre>'; 
 	// print_r($cart);
-	
+	// $_SESSION['user'];
 ?>	
 <!DOCTYPE html>
 <html lang="en">
@@ -83,13 +83,44 @@
           <li class="nav-item"><a href="about.php" class="nav-link">Giới thiệu</a></li>
           <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Liên hệ</a></li>
-          <li class="nav-item"><a href="login.php" class="nav-link">Đăng nhập</a></li>
+          <li class="nav-item">
+            <?php 
+              if(isset($_SESSION['user'])) {
+                ?>
+                  <a class="nav-link"><?php echo $_SESSION['user']?></a>
+                <?php
+              }else{
+                ?>
+                  <a href="login.php" class="nav-link">Đăng nhập</a>
+                <?php
+              }
+            
+            ?>
+            
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="shop.php">Quản lý tài khoản</a>
+              <a class="dropdown-item" href="address.php">Thêm địa chỉ</a>
+            <!-- <a class="dropdown-item" href="product-single.php">Single Product</a> -->
+            <a class="dropdown-item" href="logout.php">Đăng xuất</a>
+          </div>
+        </li>
           <?php
             $count = count($cart); 
             // var_dump($count); 
             // die();
           ?>
-          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php echo $count; ?>]</a></li>
+          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[
+          <?php 
+            if(isset($_SESSION['user'])){
+              echo $count; 
+            }else{
+              echo '0';
+            } 
+          ?>
+          ]</a></li>
 
         </ul>
       </div>

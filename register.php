@@ -22,19 +22,19 @@
 <body class="bg-silver-300">
     <div class="content">
         <div class="brand">
-            <a class="link" href="index.php">USER</a>
+            <a class="link" href="index.php">Người dùng</a>
         </div>
         <form id="register-form" action="" method="post">
-            <h2 class="login-title">Sign Up</h2>
+            <h2 class="login-title">Đăng ký</h2>
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="first_name" placeholder="First Name">
+                        <input class="form-control" type="text" name="first_name" placeholder="Họ">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                        <input class="form-control" type="text" name="last_name" placeholder="Tên">
                     </div>
                 </div>
             </div>
@@ -42,13 +42,16 @@
                 <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
             </div>
             <div class="form-group">
-                <input class="form-control" type="number" name="phone" placeholder="Phone" autocomplete="off">
+                <input class="form-control" type="number" name="phone" placeholder="Số điện thoại" autocomplete="off">
             </div>
             <div class="form-group">
-                <input class="form-control" id="password" type="password" name="password" placeholder="Password">
+                <input class="form-control" type="text" name="username" placeholder="Tên đăng nhập" autocomplete="off">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
+                <input class="form-control" id="password" type="password" name="password" placeholder="Mật khẩu">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password_confirmation" placeholder="Xác nhận mật khẩu">
             </div>
             <div class="form-group text-left">
                 <!-- <label class="ui-checkbox ui-checkbox-info">
@@ -56,10 +59,10 @@
                     <span class="input-span"></span>I agree the terms and policy</label> -->
             </div>
             <div class="form-group">
-                <input class="btn btn-info btn-block" type="submit" name="submit" value="Sign up"></input>
+                <input class="btn btn-info btn-block" type="submit" name="submit" value="Đăng ký"></input>
             </div>
             <div class="social-auth-hr">
-                <span>Or Sign up with</span>
+                <span>Đăng ký với</span>
             </div>
             <div class="text-center social-auth m-b-20">
                 <a class="btn btn-social-icon btn-twitter m-r-5" href="javascript:;"><i class="fa fa-twitter"></i></a>
@@ -68,8 +71,8 @@
                 <a class="btn btn-social-icon btn-linkedin m-r-5" href="javascript:;"><i class="fa fa-linkedin"></i></a>
                 <a class="btn btn-social-icon btn-vk" href="javascript:;"><i class="fa fa-vk"></i></a>
             </div>
-            <div class="text-center">Already a member?
-                <a class="color-blue" href="login.php">Login here</a>
+            <div class="text-center">Đã có tài khoản?
+                <a class="color-blue" href="login.php">Đăng nhập ở đây</a>
             </div>
         </form>
         <?php
@@ -79,6 +82,7 @@
                 $last_name = $_POST['last_name']; 
                 $email = $_POST['email']; 
                 $phone = $_POST['phone']; 
+                $username = $_POST['username'];
                 $password = md5($_POST['password']); 
                 $confirm_password = md5($_POST['password_confirmation']);
 
@@ -87,19 +91,25 @@
                     last_name = '$last_name', 
                     phone = '$phone', 
                     email = '$email', 
+                    username ='$username',
                     password = '$password'
                 ";
 
                 $res = mysqli_query($conn, $sql);
 
+
                 if($res == TRUE){
                     if($password == $confirm_password){
-                        $_SESSION['add'] = "<p class='text-success'>Sign up Successfully</p>";
+                        $_SESSION['add'] = "<p class='text-success'>Đăng ký thành công</p>";
+                        // $_SESSION['first_name'] = $firt_name;
+                        // $_SESSION['last_name'] = $last_name;
+                        // $_SESSION['email'] = $email;
+                        // $_SESSION['phone'] = $phone;
                         // chuyến hướng đến trang manage
-                        // echo("<script>location.href = '".SITEURL."login.php';</script>");
+                        echo("<script>location.href = '".SITEURL."login.php';</script>");
                     }
                 }else{
-                    $_SESSION['add'] = "<p class='text-success'>Failed to Sign up</p>";
+                    $_SESSION['add'] = "<p class='text-success'>Đăng ký thất bại</p>";
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."register.php';</script>");
                 }

@@ -1,3 +1,16 @@
+<?php
+    include('config/constants.php');
+?>
+            <?php
+                if(isset($_SESSION['add'])){
+                    echo $_SESSION['add'];
+                    unset($_SESSION['add']);
+                }
+                if(isset($_SESSION['login'])){
+                    echo $_SESSION['login'];
+                    unset($_SESSION['login']);
+                }
+            ?>
 <!DOCTYPE html>
 <html>
 
@@ -19,33 +32,33 @@
 <body class="bg-silver-300">
     <div class="content">
         <div class="brand">
-            <a class="link" href="index.php">USER</a>
+            <a class="link" href="index.php">Người dùng</a>
         </div>
-        <form id="login-form" action="javascript:;" method="post">
-            <h2 class="login-title">Log in</h2>
+        <form id="login-form" action="" method="POST">
+            <h2 class="login-title">Đăng nhập</h2>
             <div class="form-group">
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-envelope"></i></div>
-                    <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
+                    <input class="form-control" type="text" name="username" placeholder="Tên đăng nhập" autocomplete="off">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-lock font-16"></i></div>
-                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <input class="form-control" type="password" name="password" placeholder="Mật khẩu">
                 </div>
             </div>
             <div class="form-group d-flex justify-content-between">
                 <label class="ui-checkbox ui-checkbox-info">
-                    <input type="checkbox">
+                    <!-- <input type="checkbox">
                     <span class="input-span"></span>Remember me</label>
-                <a href="forgot_password.html">Forgot password?</a>
+                <a href="forgot_password.html">Forgot password?</a> -->
             </div>
             <div class="form-group">
-                <button class="btn btn-info btn-block" type="submit">Login</button>
+                <button class="btn btn-info btn-block" type="submit" name="submit">Đăng nhập</button>
             </div>
             <div class="social-auth-hr">
-                <span>Or login with</span>
+                <span>Đăng nhập với</span>
             </div>
             <div class="text-center social-auth m-b-20">
                 <a class="btn btn-social-icon btn-twitter m-r-5" href="javascript:;"><i class="fa fa-twitter"></i></a>
@@ -54,10 +67,46 @@
                 <a class="btn btn-social-icon btn-linkedin m-r-5" href="javascript:;"><i class="fa fa-linkedin"></i></a>
                 <a class="btn btn-social-icon btn-vk" href="javascript:;"><i class="fa fa-vk"></i></a>
             </div>
-            <div class="text-center">Not a member?
-                <a class="color-blue" href="register.php">Create acccount</a>
+            <div class="text-center">Chưa có tài khoản?
+                <a class="color-blue" href="register.php">Đăng ký ngay</a>
             </div>
         </form>
+        <?php
+            if(isset($_POST['submit'])){
+                // echo "oke"; 
+                $username = $_POST['username']; 
+                $password = md5($_POST['password']); 
+
+                $sql = "SELECT * FROM tbl_register WHERE username = '$username' AND password = '$password'"; 
+                
+                $res = mysqli_query($conn, $sql); 
+
+                $count = mysqli_num_rows($res); 
+
+                if($count > 0){
+                    while($row = mysqli_fetch_assoc($res)){
+                        $id = $row['id'];
+                        // tạo sesion lưu thông báo 
+                        $_SESSION['login'] = "<p class='text-success'>Đăng nhập thành công</p>";
+                        // $_SESSION['login'] = "<div class='success'>Login Successful. </div> ";
+                        $_SESSION['id'] = $id;
+                        $_SESSION['user'] = $username;
+                        if(isset($_GET['action'])){
+                            echo("<script>location.href = '".SITEURL."checkout.php'</script>");
+                        }else{
+                            echo("<script>location.href = '".SITEURL."'</script>");
+                        }
+                    }
+                }else{
+                    // tạo sesion lưu thông báo 
+                    $_SESSION['login'] = "<p class='text-success'>Đăng nhập thất bại</p>";
+                    // $_SESSION['login'] = "<div class='success'>Login Successful. </div> ";
+                    // chuyến hướng đến trang chủ
+                    echo("<script>location.href = '".SITEURL."login.php';</script>");
+                }
+
+            }
+        ?>
     </div>
     <!-- BEGIN PAGA BACKDROPS-->
     <div class="sidenav-backdrop backdrop"></div>

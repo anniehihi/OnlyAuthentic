@@ -1,106 +1,34 @@
 <?php include('partials-front/header.php'); ?>
-<?php 
-	$cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : []; 
 
-	// echo '<pre>'; 
-	// print_r($cart);
-	
-?>	
-
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Trang chủ</a></p>
-            <h1 class="mb-0 bread">Thanh toán</h1>
+            <h1 class="mb-0 bread">Thêm địa chỉ</h1>
           </div>
         </div>
       </div>
     </div>
-	<?php
-		$user_id = $_SESSION['id'];
-		
-		if(isset($_POST['submit'])){
-			$user_id; 
-			$status = 1;			
-			$first_name = $_POST['first_name']; 
-			$last_name = $_POST['last_name'];
-			$address = $_POST['address']; 
-			$contact = $_POST['contact'];
-			?>
-				<?php $price_total = 0 ?>
-				<?php foreach ($cart as $key => $value): 
-					$price_total += ($value['price'] * $value['qty']);
-				?>
-				<?php endforeach ?>
-			<?php
-
-			$sql = "INSERT INTO tbl_order SET
-				user_id = '$user_id', 
-				status = '$status',
-				first_name ='$first_name', 
-				last_name = '$last_name',
-				address = '$address', 
-				contact = '$contact',
-				total = '$price_total'
-			";
-
-			$res = mysqli_query($conn, $sql);
-
-			if($res==TRUE){
-				// $id = mysqli_insert_id($conn);
-				?>
-					<?php
-						$sql2 = "SELECT * FROM tbl_order"; 
-						$res2 = mysqli_query($conn, $sql2); 
-						if($res2 == TRUE){
-							$rows2 = mysqli_num_rows($res2);
-							while($rows2 = mysqli_fetch_assoc($res2)){
-								$order_id = $rows2['order_id'];
-							}
-						}
-					?>
-				<?php
-				foreach($cart as $value){
-					mysqli_query($conn, "INSERT INTO tbl_order_detail(order_id, product_id, product_name, image_name, qty, price) VALUES ('$order_id','$value[id]','$value[title]', '$value[image_name]', '$value[qty]', '$value[price]')");
-				}
-				unset($_SESSION['cart']);
-				echo("<script>location.href = '".SITEURL."index.php';</script>");
-			}
-		}
-	?>
 
     <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-10 ftco-animate">
-			  
-						<form action="" class="billing-form" method = "POST">
-							<?php
-								if(isset($_SESSION['user'])){
-									?>
-										<p class="mb-4 billing-heading">Xin chào <?php echo $_SESSION['user'];  ?></p>
-									<?php
-								}else{
-									?>
-										<a href="login.php?action=checkout" class="mb-4 billing-heading">Đăng nhập</a>
-									<?php
-								}
-							?>
-
-							<br><br>
-							<h3 class="mb-4 billing-heading">Chi tiết hoá đơn</h3>
+						<form action="#" class="billing-form">
+							<!-- <br><br> -->
+							<h3 class="mb-4 billing-heading">Thêm địa chỉ</h3>
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Họ</label>
-	                  <input type="text" class="form-control" name="first_name" >
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Tên</label>
-	                  <input type="text" class="form-control" placeholder="" name="last_name">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -125,39 +53,39 @@
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="streetaddress">Địa chỉ</label>
-	                  <input type="text" class="form-control" placeholder="" name="address">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Tỉnh/Thành Phố</label>
-	                  <input type="text" class="form-control" placeholder="" name="city">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Quận/Huyện</label>
-	                  <input type="text" class="form-control" placeholder="" name="distric">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 		            		<label for="postcodezip">Phường/Xã</label>
-	                  <input type="text" class="form-control" placeholder="" name="ward">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Số điện thoại</label>
-	                  <input type="text" class="form-control" placeholder="" name="contact">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="emailaddress">Email</label>
-	                  <input type="text" class="form-control" placeholder="" name="email">
+	                  <input type="text" class="form-control" placeholder="">
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -170,38 +98,37 @@
 									</div>
                 </div> -->
 	            </div>
+                <p><input type="submit" class="btn btn-primary py-3 px-4" value="Thêm địa chỉ" name="add_address"></input></p>   
+	          </form><!-- END -->
+              <!-- <?php
+                if(isset($_POST['add_address'])){
+                    echo 'oke';
+                }else{
+                    echo 'not oke';
+                }
+              ?> -->
 
 
-
-
-	          <div class="row mt-5 pt-3 d-flex">
+	          <!-- <div class="row mt-5 pt-3 d-flex">
 	          	<div class="col-md-6 d-flex">
 	          		<div class="cart-detail cart-total bg-light p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Tổng giỏ hàng</h3>
-						  	<?php $total_price = 0; ?>
-						  	<?php foreach ($cart as $key => $value): 
-								$total_price += ($value['price'] * $value['qty']);
-						 	?>
-							<?php endforeach ?>
 	          			<p class="d-flex">
 		    						<span>Tạm tính</span>
-		    						<span><?php echo number_format($total_price); ?> VND</span>
+		    						<span>$20.60</span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Phí giao hàng</span>
-		    						<span>Miễn phí</span>
+		    						<span>$0.00</span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Giảm giá</span>
-		    						<span>10%</span>
+		    						<span>$3.00</span>
 		    					</p>
 		    					<hr>
-								<?php
-									$total = $total_price * 0.9;
-								?>
 		    					<p class="d-flex total-price">
 		    						<span>Tổng</span>
-		    						<span><?php echo number_format($total); ?> VND</span>
+		    						<span>$17.60</span>
 		    					</p><br><br>
 								<p><a href="cart.php"class="btn btn-primary py-3 px-4">Xem lại giỏ hàng</a></p>
 								</div>
@@ -237,11 +164,10 @@
 											</div>
 										</div>
 									</div>
-									<p><input type="submit" name="submit" value="Đặt hàng" class="btn btn-primary py-3 px-4"></input></p>
+									<p><a href="#"class="btn btn-primary py-3 px-4">Đặt hàng</a></p>
 								</div>
-								</form><!-- END -->
 	          	</div>
-	          </div>
+	          </div> -->
           </div> <!-- .col-md-8 -->
         </div>
       </div>
