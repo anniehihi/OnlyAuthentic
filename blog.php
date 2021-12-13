@@ -23,6 +23,7 @@
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
 		                  <div><a href="#">NGÀY 9 THÁNG 4 NĂM 2021</a></div>
+						
 		                  <div><a href="#">Admin</a></div>
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
