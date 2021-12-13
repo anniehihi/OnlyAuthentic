@@ -214,8 +214,7 @@
                     title = '$title', 
                     description = '$description', 
                     price = '$price', 
-                    image_name = '$image_name', 
-                    image_name_detail = '$image_name_detail',
+                    image_name = '$image_name',
                     category_id = '$category', 
                     featured = '$featured', 
                     active = '$active'

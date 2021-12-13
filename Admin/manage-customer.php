@@ -1,11 +1,5 @@
 <?php include('./partials/header.php'); ?>
 
-            <?php
-                if(isset($_SESSION['add'])){
-                    echo $_SESSION['add'];
-                    unset($_SESSION['add']);
-                }
-            ?>
 
             <?php
                 if(isset($_SESSION['delete'])){
@@ -18,27 +12,6 @@
                 if(isset($_SESSION['update'])){
                     echo $_SESSION['update'];
                     unset($_SESSION['update']);
-                }
-            ?>
-
-            <?php
-                if(isset($_SESSION['user-not-found'])){
-                    echo $_SESSION['user-not-found'];
-                    unset($_SESSION['user-not-found']);
-                }
-            ?>
-
-            <?php
-                if(isset($_SESSION['pwd-not-match'])){
-                    echo $_SESSION['pwd-not-match'];
-                    unset($_SESSION['pwd-not-match']);
-                }
-            ?>
-
-            <?php
-                if(isset($_SESSION['change-pwd'])){
-                    echo $_SESSION['change-pwd'];
-                    unset($_SESSION['change-pwd']);
                 }
             ?>
 
@@ -60,15 +33,15 @@
                                     <th>STT</th>
                                     <th>Họ</th>
                                     <th>Tên</th>
-                                    <th>Email</th>
                                     <th>Số điện thoại</th>
-                                    <th>Mật khẩu</th>
+                                    <th>Email</th>
+                                    <th>Tên đăng nhập</th>
                                 </tr>
                             </thead>
 
                             <?php
                                 // câu truy vấn để nhận giá trị của tất cả admin
-                                $sql = "SELECT * FROM tbl_admin"; 
+                                $sql = "SELECT * FROM tbl_register"; 
 
                                 // thực thi truy vấn 
                                 $res = mysqli_query($conn, $sql); 
@@ -89,7 +62,10 @@
 
                                             // lấy dữ liệu 
                                             $id = $rows['id']; 
-                                            $full_name = $rows['full_name']; 
+                                            $first_name = $rows['first_name']; 
+                                            $last_name = $rows['last_name']; 
+                                            $conctact = $rows['phone']; 
+                                            $email = $rows['email']; 
                                             $username = $rows['username']; 
 
                                             // hiển thị giá trị trong bảng 
@@ -97,11 +73,12 @@
                                             <tbody>
                                                 <tr>
                                                     <td><?php echo $sn++; ?></td>
-                                                    <td><?php echo $full_name; ?></td>
+                                                    <td><?php echo $first_name; ?></td>
+                                                    <td><?php echo $last_name; ?></td>
+                                                    <td><?php echo $conctact; ?></td>
+                                                    <td><?php echo $email; ?></td>
                                                     <td><?php echo $username ?></td>
                                                     <td>
-                                                        <a href="<?php echo SITEURL; ?>admin/change-password.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Change Password "><i class="fa fa-key font-14"></i></button></a>
-                                                        <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
                                                         <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a>
                                                     </td>
                                                 </tr>

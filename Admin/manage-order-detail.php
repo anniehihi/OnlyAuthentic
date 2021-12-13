@@ -98,7 +98,7 @@
                                 </td>
                                 <td><?php echo $qty; ?></td>
                                 <td><?php echo number_format($price); ?> VND</td>
-                                <td>$440.00</td>
+                                <td><?php echo number_format($qty * $price);?> VND</td>
                             </tr>
                         </tbody>
                     </table>
@@ -112,7 +112,7 @@
                         <tbody>
                             <tr class="text-right">
                                 <td class="font-bold font-18">TỔNG:</td>
-                                <td class="font-bold font-18">$1748</td>
+                                <td class="font-bold font-18"><?php echo number_format($qty * $price);?> VND</td>
                             </tr>
                         </tbody>
                     </table>

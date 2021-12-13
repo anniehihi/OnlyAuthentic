@@ -98,7 +98,7 @@
                                                     <td><?php echo $last_name; ?></td>
                                                     <td><?php echo $address; ?></td>
                                                     <td><?php echo $contact; ?></td>
-                                                    <td><?php echo number_format($price_total); ?></td>
+                                                    <td><?php echo number_format($price_total) ; ?></td>
                                                     <td>
                                                         <?php
                                                          if($status == 1){
