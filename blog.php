@@ -9,7 +9,6 @@
         </div>
       </div>
     </div>
-
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
