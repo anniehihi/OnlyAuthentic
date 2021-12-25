@@ -25,9 +25,9 @@
                 </ol>
             </div>
             <div class="ibox">
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
+            <div class="page-content fade-in-up">
+                    <div class="ibox-body">
+                        <table class="table" id="example-table" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>STT</th>
@@ -79,7 +79,7 @@
                                                     <td><?php echo $email; ?></td>
                                                     <td><?php echo $username ?></td>
                                                     <td>
-                                                        <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a>
+                                                        <a href="<?php echo SITEURL; ?>admin/delete-customer.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Xoá"><i class="fa fa-trash font-14"></i></button></a>
                                                     </td>
                                                 </tr>
                                             </tbody>

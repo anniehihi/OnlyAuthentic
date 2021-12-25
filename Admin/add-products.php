@@ -55,12 +55,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Chi tiết ảnh sản phẩm</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="file" name="image_detail">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Danh mục sản phẩm</label>
                                 <div class="col-sm-10">
                                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category">
@@ -126,7 +120,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">
-                                    <input class="btn btn-info" type="submit" name="submit" value="Add Products"></input>
+                                    <input class="btn btn-info" type="submit" name="submit" value="Thêm"></input>
                                 </div>
                             </div>
                         </form>
@@ -181,34 +175,6 @@
                 else{
                     $image_name = "";
                 } 
-
-                // if(isset($_FILES['image_detail']['name'])){
-                //     $image_name_detail = $_FILES['image_detail']['name'];
-
-                //     if($image_name_detail != ""){
-                        
-                //         $ext = end(explode('.', $image_name_detail));
-
-                //         $image_name_detail = "Product_Name_Detail".rand(0000, 9999).'.'.$ext;
-
-                //         $source_path = $_FILES['image_detail']['tmp_name'];
-
-                //         $destination_path = "../img/product_detail/".$image_name_detail;
-
-                //         $upload = move_uploaded_file($source_path, $destination_path);
-
-                //         if($upload == false){
-                //             // tạo sesion lưu thông báo 
-                //             $_SESSION['upload'] = "<p class='text-success'>Lỗi thêm ảnh sản phẩm chi tiết</p>";
-                //             // chuyến hướng đến trang manage
-                //             echo("<script>location.href = '".SITEURL."admin/add-products.php';</script>");
-                //             die();
-                //         }
-                //     }
-                // }
-                // else{
-                //     $image_name_detail = "";
-                // } 
 
                 $sql="INSERT INTO tbl_products SET
                     title = '$title', 

@@ -124,20 +124,6 @@
 											?>
 
 											<div class="text py-3 pb-4 px-3">
-												<div class="d-flex">
-													<div class="cat">
-														<span>Lifestyle</span>
-													</div>
-													<div class="rating">
-														<p class="text-right mb-0">
-															<a href="#"><span class="ion-ios-star-outline"></span></a>
-															<a href="#"><span class="ion-ios-star-outline"></span></a>
-															<a href="#"><span class="ion-ios-star-outline"></span></a>
-															<a href="#"><span class="ion-ios-star-outline"></span></a>
-															<a href="#"><span class="ion-ios-star-outline"></span></a>
-														</p>
-													</div>
-												</div>
 												<h3><a href="#"><?php echo $title;?></a></h3>
 												<div class="pricing">
 													<p class="price"><span><?php echo number_format($price); ?> VND</span></p>

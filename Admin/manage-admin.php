@@ -44,7 +44,7 @@
 
             <!-- START PAGE CONTENT-->
             <div class="page-heading">
-                <h1 class="page-title">Manage Admin</h1>
+                <h1 class="page-title">Quản lý tài khoản admin</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.html"><i class="la la-home font-20"></i></a>
@@ -55,15 +55,15 @@
                 <div class="ibox-head">
                     <a href="add-admin.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
                 </div>
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
+                <div class="page-content fade-in-up">
+                    <div class="ibox-body">
+                        <table class="table" id="example-table" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>S.N</th>
-                                    <th>Full Name</th>
-                                    <th>Username</th>
-                                    <th>Actions</th>
+                                    <th>STT</th>
+                                    <th>Họ và Tên</th>
+                                    <th>Tên đăng nhập</th>
+                                    <th>Hoạt động</th>
                                 </tr>
                             </thead>
 

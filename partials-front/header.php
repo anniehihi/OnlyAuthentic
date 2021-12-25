@@ -102,7 +102,14 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
               <a class="dropdown-item" href="shop.php">Quản lý tài khoản</a>
-              <a class="dropdown-item" href="address.php">Thêm địa chỉ</a>
+              <?php
+              	if(isset($_SESSION['id'])){
+                  $user_id = $_SESSION['id'];
+                }
+              ?>
+              <a class="dropdown-item" href="address.php?id=<?php if(isset($_SESSION['user'])){
+						echo $user_id;
+					}  ?>">Thêm địa chỉ</a>
             <!-- <a class="dropdown-item" href="product-single.php">Single Product</a> -->
             <a class="dropdown-item" href="logout.php">Đăng xuất</a>
           </div>
@@ -112,15 +119,7 @@
             // var_dump($count); 
             // die();
           ?>
-          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[
-          <?php 
-            if(isset($_SESSION['user'])){
-              echo $count; 
-            }else{
-              echo '0';
-            } 
-          ?>
-          ]</a></li>
+          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php echo $count; ?>]</a></li>
 
         </ul>
       </div>

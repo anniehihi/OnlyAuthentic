@@ -13,30 +13,6 @@
                     <div class="invoice-header">
                         <div class="row">
                             <div class="col-6">
-                                <div class="invoice-logo">
-                                    <?php
-                                        if(isset($_GET['id'])){
-                                            $id = $_GET['id'];
-
-                                            $sql = "SELECT * FROM tbl_order_detail WHERE order_id = $id";
-
-                                            // thực thi truy vấn
-                                            $res = mysqli_query($conn, $sql);
-
-                                            // kiểm tra xem có dữ liệu hay không 
-                                            $count = mysqli_num_rows($res); 
-
-                                            if($count==1){
-                                                $row = mysqli_fetch_assoc($res); 
-
-                                                $product_name = $row['product_name'];
-                                                $qty = $row['qty']; 
-                                                $price = $row['price'];
-                                                $image_name = $row['image_name'];
-                                            }
-                                        }
-                                    ?>
-                                </div>
                                 <div>
                                     <div class="m-b-5 font-bold">Được gửi từ</div>
                                     <div>Minishop</div>
@@ -51,21 +27,50 @@
                                 </div>
                             </div>
                             <div class="col-6 text-right">
-                                <div class="clf" style="margin-bottom:30px;">
-                                    <dl class="row pull-right" style="width:250px;"><dt class="col-sm-6">Invoice Date</dt>
-                                        <dd class="col-sm-6">10 April 2017</dd><dt class="col-sm-6">Issue Date</dt>
-                                        <dd class="col-sm-6">30 April 2017</dd><dt class="col-sm-6">Account No.</dt>
-                                        <dd class="col-sm-6">1450012</dd>
-                                    </dl>
-                                </div>
                                 <div>
                                     <div class="m-b-5 font-bold">Gửi đến</div>
-                                    <div>Emma Johnson</div>
-                                    <ul class="list-unstyled m-t-10">
-                                        <li class="m-b-5">San Francisco, 548 Market St.</li>
-                                        <li class="m-b-5">emma.johnson@exmail.com</li>
-                                        <li>(123) 279-4058</li>
-                                    </ul>
+                                    <?php
+                                        if(isset($_GET['id'])){
+                                            $id_order = $_GET['id'];
+                                        }
+
+                                    ?>
+                                    <?php
+                                        $sql2 = "SELECT * FROM tbl_order WHERE order_id = $id_order"; 
+                                        
+                                        $res2 = mysqli_query($conn, $sql2); 
+
+                                        if($res2 == TRUE){
+                                            $row2 = mysqli_num_rows($res2); 
+                                            if($row2>0){
+                                                while($row2 = mysqli_fetch_assoc($res2)){
+
+                                                    $first_name = $row2['first_name']; 
+                                                    $last_name = $row2['last_name']; 
+                                                    $address = $row2['address']; 
+                                                    $city = $row2['city'];
+                                                    $district = $row2['district'];  
+                                                    $ward = $row2['ward']; 
+                                                    $contact = $row2['contact'];
+                                                    $total_product = $row2['total'];
+                                                    $date = $row2['order_date'];
+                                                    ?>
+                                                        <div><?php echo $first_name." ".$last_name; ?></div>
+                                                        <ul class="list-unstyled m-t-10">
+                                                            <li class="m-b-5"><?php echo $address.', '.$city.', '.$district.', '.$ward ?></li>
+                                                            <li><?php echo $contact; ?></li>
+                                                        </ul>
+                                                    <?php
+                                                }
+                                            }
+                                        }
+                                    ?>
+
+                                </div>
+                                <div class="clf" style="margin-bottom:30px;">
+                                    <dl class="row pull-right" style="width:250px;"><dt class="col-sm-6">Ngày đặt</dt>
+                                        <dd class="col-sm-6"><?php echo $date; ?></dd>
+                                    </dl>
                                 </div>
                             </div>
                         </div>
@@ -82,25 +87,57 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <div><strong><?php echo $product_name; ?></strong></div></td>
-                                <td>
-                                    <?php
-                                        if($image_name != ""){
-                                            ?>
-                                                <img src="<?php echo SITEURL; ?>img/product/<?php echo $image_name; ?>"
-                                                width = "150px">
-                                            <?php
-                                        }else{
-                                            echo "<p class='text-success'>Image Not Added</p>";
+                                <?php
+                                    if(isset($_GET['id'])){
+                                        $id = $_GET['id'];
+
+                                        $sql = "SELECT * FROM tbl_order_detail WHERE order_id = $id";
+                                        // var_dump($sql); 
+                                        // die();
+
+                                        // thực thi truy vấn
+                                        $res = mysqli_query($conn, $sql);
+
+                                        // kiểm tra xem có dữ liệu hay không 
+                                        $count = mysqli_num_rows($res); 
+
+                                        if($count > 0){
+                                            while($row = mysqli_fetch_assoc($res)){
+                                                $product_name = $row['product_name'];
+                                                $qty = $row['qty']; 
+                                                $price = $row['price'];
+                                                $image_name = $row['image_name'];
+
+                                                ?>
+                                                    <td>
+                                                        <div><strong><?php echo $product_name; ?></strong></div></td>
+                                                    <td>
+                                                        <?php
+                                                            if($image_name != ""){
+                                                                ?>
+                                                                    <img src="<?php echo SITEURL; ?>img/product/<?php echo $image_name; ?>"
+                                                                    width = "150px">
+                                                                <?php
+                                                            }else{
+                                                                echo "<p class='text-success'>Image Not Added</p>";
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td><?php echo $qty; ?></td>
+                                                    <td><?php echo number_format($price); ?> VND</td>
+                                                    <?php
+                                                        $total = $price * $qty;
+                                                    ?>
+                                                    <td><?php echo number_format($total);?> VND</td>
+                                                    </tr>
+                                                </tbody>
+                                                <?php
+                                            } 
                                         }
-                                    ?>
-                                </td>
-                                <td><?php echo $qty; ?></td>
-                                <td><?php echo number_format($price); ?> VND</td>
-                                <td><?php echo number_format($qty * $price);?> VND</td>
-                            </tr>
-                        </tbody>
+                                    }else{
+                                        echo "Không có đơn hàng";
+                                    }
+                                ?>
                     </table>
                     <table class="table no-border">
                         <thead>
@@ -112,7 +149,7 @@
                         <tbody>
                             <tr class="text-right">
                                 <td class="font-bold font-18">TỔNG:</td>
-                                <td class="font-bold font-18"><?php echo number_format($qty * $price);?> VND</td>
+                                <td class="font-bold font-18"><?php echo number_format($total_product);?> VND</td>
                             </tr>
                         </tbody>
                     </table>

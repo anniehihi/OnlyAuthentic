@@ -8,7 +8,7 @@
             ?>
 
             <div class="page-heading">
-                <h1 class="page-title">Add Admin</h1>
+                <h1 class="page-title">Thêm tài khoản</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.html"><i class="la la-home font-20"></i></a>
@@ -28,21 +28,21 @@
                     <div class="ibox-body">
                         <form class="form-horizontal" action="" method="POST">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Full Name</label>
+                                <label class="col-sm-2 col-form-label">Họ và Tên</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="full_name">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Username</label>
+                                <label class="col-sm-2 col-form-label">Tên đăn nhập</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="username">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Password</label>
+                                <label class="col-sm-2 col-form-label">Mật khẩu</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="password">
                                 </div>
@@ -50,7 +50,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">
-                                    <input class="btn btn-info" type="submit" name="submit" value="Add Admin"></input>
+                                    <input class="btn btn-info" type="submit" name="submit" value="Thêm"></input>
                                 </div>
                             </div>
                         </form>
@@ -62,7 +62,6 @@
 <?php include('./partials/footer.php') ?>
 
 <?php
-    ob_start();
     // xử lý giá trị từ form và lưu vào databse 
 
     // kiểm tra xem có click vào nút button hay không 
@@ -88,17 +87,16 @@
         if($res == TRUE){
             // echo "Data oke";
             // tạo sesion lưu thông báo 
-            $_SESSION['add'] = "<p class='text-success'>Admin Add Successfully</p>";
+            $_SESSION['add'] = "<p class='text-success'>Thêm tài khoản thành công</p>";
             // chuyến hướng đến trang manage
             echo("<script>location.href = '".SITEURL."admin/manage-admin.php';</script>");
         }else{
             // echo "data not oke";
             // tạo sesion lưu thông báo 
-            $_SESSION['add'] = "<p class='text-danger'>Failed To Add Admin</p>";
+            $_SESSION['add'] = "<p class='text-danger'>Lỗi thêm tài khoản</p>";
             // chuyển hướng đến trang manage
             echo("<script>location.href = '".SITEURL."admin/manage-admin.php';</script>");
         }
     }
-    ob_end_flush();
 ?>        
 </div>

@@ -34,13 +34,13 @@
                     </li>
                 </ol>
             </div>
-            <div class="ibox">
+
+                <div class="ibox">
                 <div class="ibox-head">
                     <a href="<?php echo SITEURL; ?>admin/add-products.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Thêm mới"><i class="fa fa-plus font-14"></i></button></a>
                 </div>
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div class="ibox-body">
+                        <table class="table" id="example-table" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>STT</th>
@@ -48,7 +48,6 @@
                                     <th>Miêu tả</th>
                                     <th>Giá tiền</th>
                                     <th>Hình ảnh</th>
-                                    <!-- <th>Hình ảnh chi tiết</th> -->
                                     <th>Đặc sắc</th>
                                     <th>Trạng thái</th>
                                     <th>Hoạt động</th>
@@ -84,7 +83,7 @@
                                                     <td><?php echo $sn++; ?></td>
                                                     <td><?php echo $title; ?></td>
                                                     <td width="300px"><?php echo $description; ?></td>
-                                                    <td><?php echo $price; ?></td>
+                                                    <td><?php echo number_format($price); ?></td>
                                                     <td>
                                                         <?php
                                                             if($image_name != ""){

@@ -44,114 +44,98 @@
 
             <!-- START PAGE CONTENT-->
             <div class="page-heading">
-                <h1 class="page-title">Manage Category</h1>
+                <h1 class="page-title">Quản lý danh mục sản phẩm</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.html"><i class="la la-home font-20"></i></a>
                     </li>
                 </ol>
             </div>
-            <div class="ibox">
+
+
+            <div class="page-content fade-in-up">
+                <div class="ibox">
                 <div class="ibox-head">
-                    <a href="add-category.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>  
-
-
-                    <form action="manage-category.php" method = "POST">
-                        <div class="ibox-head">
-                            <input class="form-control" placeholder="Search here..." type="text" name="product_name">&ensp;
-                            <button type="submit"  name= "search" class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Search"><i class="fa fa-search font-14"></i></button>
-                        </div>
-                    </form>
-                    <?php
-                        $_SESSION['product'] = $_POST;
-                        $search = $_SESSION['product']; 
-                    ?>
-
+                    <a href="add-category.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Thêm"><i class="fa fa-plus font-14"></i></button></a>  
                 </div>
-                <div class="ibox-head">
-                </div>
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div class="ibox-body">
+                        <table class="table" id="example-table" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>S.N</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Featured</th>
-                                    <th>Active</th>
+                                    <th>STT</th>
+                                    <th>Tên danh mục</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Đặc Sắc</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hoạt động</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    // foreach($search as $key => $value){
-                                    //     if(isset($_POST['search'])){
-                                    //         // câu truy vấn để lấy dữ liệu 
-                                    //         $sql = "SELECT * FROM tbl_category WHERE title LIKE '%$value%'"; 
-                                    //     }else{
-                                            // câu truy vấn để lấy dữ liệu 
-                                            $sql = "SELECT * FROM tbl_category "; 
-                                            // thực thi câu truy vấn
-                                            $res = mysqli_query($conn, $sql); 
+                                    $sql3 = "SELECT * FROM tbl_category";
 
-                                            // kiểm tra xem có dữ liệu hay không 
-                                            $count = mysqli_num_rows($res); 
+                                    $res3 = mysqli_query($conn, $sql3); 
+                                    $count3 = mysqli_num_rows($res3); 
+                                    $sn = 1; 
 
-                                            $sn = 1; 
-
-                                            if($count > 0){
-                                                while($row = mysqli_fetch_assoc($res)){
-                                                    $id = $row['id']; 
-                                                    $title = $row['title']; 
-                                                    $image_name = $row['image_name']; 
-                                                    $featured = $row['featured']; 
-                                                    $active = $row['active'];
-                                                    ?>
-                                                        <tr>
-                                                            <td><?php echo $sn++; ?></td>
-                                                            <td><?php echo $title; ?></td>
-                                                            <td>
-                                                                <?php
-                                                                    if($image_name != ""){
-                                                                        ?>
-                                                                            <img src="<?php echo SITEURL; ?>img/category/<?php echo $image_name; ?>"
-                                                                            width = "150px">
-                                                                        <?php
-                                                                    }else{
-                                                                        echo "<p class='text-success'>Image Not Added</p>";
-                                                                    }
+                                    if($count3 > 0){
+                                        while($row = mysqli_fetch_assoc($res3)){
+                                            $id = $row['id']; 
+                                            $title = $row['title']; 
+                                            $image_name = $row['image_name']; 
+                                            $featured = $row['featured']; 
+                                            $active = $row['active'];
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $sn++; ?></td>
+                                                    <td><?php echo $title; ?></td>
+                                                    <td>
+                                                        <?php
+                                                            if($image_name != ""){
                                                                 ?>
-                                                            </td>
-                                                            <td><?php echo $featured; ?></td>
-                                                            <td><?php echo $active; ?></td>
-                                                            <td>
-                                                                <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
-                                                                <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a> 
-                                                            </td>
-                                                        </tr>
-                                                    <?php
-                                                }
-                                            }else{
-                                                ?>
-                                                    <tr>
-                                                        <td>
-                                                            <div class='text-success'>Image Not Added</div>
-                                                        </td>
-                                                    </tr>
-                                                <?php
-                                            }
-                                    //     }
-                                    // }
-                                    
-                                ?>
+                                                                    <img src="<?php echo SITEURL; ?>img/category/<?php echo $image_name; ?>"
+                                                                    width = "150px">
+                                                                <?php
+                                                            }else{
+                                                                echo "<p class='text-success'>Image Not Added</p>";
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td><?php echo $featured; ?></td>
+                                                    <td><?php echo $active; ?></td>
+                                                    <td>
+                                                        <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
+                                                        <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a> 
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                        }
+                                    }else{
+                                        ?>
+                                            <tr>
+                                                <td>
+                                                    <div class='text-success'>Không có sản phẩm</div>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                    }                                    
+                                    ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
             <!-- END PAGE CONTENT-->
         </div>
+    </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="dataTables_info" id="example-table_info" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT-->
+        </div>
+        
 
 
 

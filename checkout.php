@@ -18,55 +18,70 @@
       </div>
     </div>
 	<?php
-		$user_id = $_SESSION['id'];
+		if(isset($_SESSION['id'])){
+			$user_id = $_SESSION['id'];
+		}
 		
 		if(isset($_POST['submit'])){
-			$user_id; 
-			$status = 1;			
-			$first_name = $_POST['first_name']; 
-			$last_name = $_POST['last_name'];
-			$address = $_POST['address']; 
-			$contact = $_POST['contact'];
-			?>
-				<?php $price_total = 0 ?>
-				<?php foreach ($cart as $key => $value): 
-					$price_total += ($value['price'] * $value['qty']);
+			if(isset($_SESSION['user'])){
+				$user_id; 
+				$status = 'Chờ xác nhận';			
+				$first_name = $_POST['first_name']; 
+				$last_name = $_POST['last_name'];
+				$address = $_POST['address']; 
+				$city = $_POST['city'];
+				$distric = $_POST['distric'];
+				$ward = $_POST['ward'];
+				$contact = $_POST['contact'];
+				$order_date = date("Y-m-d h:i:sa"); 
 				?>
-				<?php endforeach ?>
-			<?php
-
-			$sql = "INSERT INTO tbl_order SET
-				user_id = '$user_id', 
-				status = '$status',
-				first_name ='$first_name', 
-				last_name = '$last_name',
-				address = '$address', 
-				contact = '$contact',
-				total = '$price_total'
-			";
-
-			$res = mysqli_query($conn, $sql);
-
-			if($res==TRUE){
-				// $id = mysqli_insert_id($conn);
-				?>
-					<?php
-						$sql2 = "SELECT * FROM tbl_order"; 
-						$res2 = mysqli_query($conn, $sql2); 
-						if($res2 == TRUE){
-							$rows2 = mysqli_num_rows($res2);
-							while($rows2 = mysqli_fetch_assoc($res2)){
-								$order_id = $rows2['order_id'];
-							}
-						}
+					<?php $price_total = 0 ?>
+					<?php foreach ($cart as $key => $value): 
+						$price_total += ($value['price'] * $value['qty']);
 					?>
+					<?php endforeach ?>
 				<?php
-				foreach($cart as $value){
-					mysqli_query($conn, "INSERT INTO tbl_order_detail(order_id, product_id, product_name, image_name, qty, price) VALUES ('$order_id','$value[id]','$value[title]', '$value[image_name]', '$value[qty]', '$value[price]')");
+	
+				$sql = "INSERT INTO tbl_order SET
+					user_id = '$user_id', 
+					status = '$status',
+					first_name ='$first_name', 
+					last_name = '$last_name',
+					address = '$address', 
+					city = '$city', 
+					district = '$distric', 
+					ward = '$ward',
+					contact = '$contact',
+					total = '$price_total',
+					order_date = '$order_date'
+				";
+	
+				$res = mysqli_query($conn, $sql);
+	
+				if($res==TRUE){
+					// $id = mysqli_insert_id($conn);
+					?>
+						<?php
+							$sql2 = "SELECT * FROM tbl_order"; 
+							$res2 = mysqli_query($conn, $sql2); 
+							if($res2 == TRUE){
+								$rows2 = mysqli_num_rows($res2);
+								while($rows2 = mysqli_fetch_assoc($res2)){
+									$order_id = $rows2['order_id'];
+								}
+							}
+						?>
+					<?php
+					foreach($cart as $value){
+						mysqli_query($conn, "INSERT INTO tbl_order_detail(order_id, product_id, product_name, image_name, qty, price) VALUES ('$order_id','$value[id]','$value[title]', '$value[image_name]', '$value[qty]', '$value[price]')");
+					}
+					unset($_SESSION['cart']);
+					echo("<script>location.href = '".SITEURL."index.php';</script>");
 				}
-				unset($_SESSION['cart']);
-				echo("<script>location.href = '".SITEURL."index.php';</script>");
+			}else{
+				echo '<script>alert("Bạn cần đăng nhập để mua hàng!")</script>';				
 			}
+			
 		}
 	?>
 
@@ -77,9 +92,35 @@
 			  
 						<form action="" class="billing-form" method = "POST">
 							<?php
+								if(isset($_GET['id'])){
+									$id_user = $_GET['id'];
+								}
+							?>
+							<?php
 								if(isset($_SESSION['user'])){
 									?>
 										<p class="mb-4 billing-heading">Xin chào <?php echo $_SESSION['user'];  ?></p>
+										<?php 
+											$sql3 = "SELECT * FROM tbl_address_user WHERE user_id = $id_user"; 
+
+											$res3 = mysqli_query($conn, $sql3); 
+
+											$count3 = mysqli_num_rows($res3); 
+
+											if($count3 > 0){
+												$row3 = mysqli_fetch_assoc($res3); 	
+
+												$first_name = $row3['first_name'];
+												$last_name = $row3['last_name']; 
+												$address = $row3['address']; 
+												$city = $row3['city']; 
+												$distric = $row3['distric']; 
+												$ward = $row3['ward']; 
+												$contact = $row3['contact']; 
+												$email = $row3['email'];
+											}
+											
+										?>
 									<?php
 								}else{
 									?>
@@ -94,13 +135,23 @@
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Họ</label>
-	                  <input type="text" class="form-control" name="first_name" >
+	                  <input type="text" class="form-control" name="first_name" 
+					  value="<?php
+							if(isset($_SESSION['user'])){
+								echo $first_name; 
+							}
+						?>">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Tên</label>
-	                  <input type="text" class="form-control" placeholder="" name="last_name">
+	                  <input type="text" class="form-control"  name="last_name" 					  
+					  value="<?php
+							if(isset($_SESSION['user'])){
+								echo $last_name; 
+							}
+						?>" >
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -125,39 +176,59 @@
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="streetaddress">Địa chỉ</label>
-	                  <input type="text" class="form-control" placeholder="" name="address">
+	                  <input type="text" class="form-control" name="address" value="<?php if(isset($_SESSION['user'])){echo $address; }?>">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Tỉnh/Thành Phố</label>
-	                  <input type="text" class="form-control" placeholder="" name="city">
+	                  <input type="text" class="form-control" name="city" value="<?php if(isset($_SESSION['user'])){echo $city; }?>">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Quận/Huyện</label>
-	                  <input type="text" class="form-control" placeholder="" name="distric">
+	                  <input type="text" class="form-control" name="distric" 					  
+					  value="<?php
+							if(isset($_SESSION['user'])){
+								echo $distric; 
+							}
+						?>">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 		            		<label for="postcodezip">Phường/Xã</label>
-	                  <input type="text" class="form-control" placeholder="" name="ward">
+	                  <input type="text" class="form-control" name="ward" 					  
+					  value="<?php
+							if(isset($_SESSION['user'])){
+								echo $ward; 
+							}
+						?>">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Số điện thoại</label>
-	                  <input type="text" class="form-control" placeholder="" name="contact">
+	                  <input type="text" class="form-control" name="contact" 					  
+					  value="<?php
+							if(isset($_SESSION['user'])){
+								echo $contact; 
+							}
+						?>">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="emailaddress">Email</label>
-	                  <input type="text" class="form-control" placeholder="" name="email">
+	                  <input type="text" class="form-control" name="email" 					  
+					  value="<?php
+							if(isset($_SESSION['user'])){
+								echo $email; 
+							}
+						?>">
 	                </div>
                 </div>
                 <div class="w-100"></div>

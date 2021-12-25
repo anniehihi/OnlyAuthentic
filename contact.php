@@ -1,4 +1,10 @@
 <?php include('partials-front/header.php'); ?>
+			<?php
+                if(isset($_SESSION['add'])){
+                    echo $_SESSION['add'];
+                    unset($_SESSION['add']);
+                }
+			?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
@@ -39,26 +45,49 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
+            <form action="" class="bg-white p-5 contact-form" method="POST">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tên">
+                <input type="text" class="form-control" placeholder="Tên" name="full_name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" placeholder="Email" name="email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Chủ đề">
+                <input type="text" class="form-control" placeholder="Chủ đề" name="topic">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Lời nhắn"></textarea>
+                <textarea id="" cols="30" rows="7" class="form-control" placeholder="Lời nhắn" name="message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Gửi" name="submit" class="btn btn-primary py-3 px-5">
               </div>
             </form>
-          
-          </div>
+			<?php
+			if(isset($_POST['submit'])){
+				$full_name=$_POST['full_name']; 
+				$email = $_POST['email']; 
+				$topic = $_POST['topic']; 
+				$message = $_POST['message']; 
 
+				$sql = "INSERT INTO tbl_contact SET 
+					full_name = '$full_name', 
+					email = '$email', 
+					topic = '$topic', 
+					message = '$message'
+				";
+
+				$res = mysqli_query($conn, $sql); 
+
+				if($res==TRUE){
+					$_SESSION['add'] = "<p class='text-success'>Gửi liên hệ thành công</p>"; 
+					echo("<script>location.href = '".SITEURL."contact.php';</script>");
+				}else{
+					$_SESSION['add'] = "<p class='text-success'>Lỗi gửi liên hệ</p>"; 
+					echo("<script>location.href = '".SITEURL."contact.php';</script>");
+				}
+			}
+		  ?>
+          </div>
           <div class="col-md-6 d-flex">
           	<div id="map" class="bg-white"></div>
           </div>

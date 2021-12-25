@@ -42,7 +42,7 @@
             ?>
             <!-- START PAGE CONTENT-->
             <div class="page-heading">
-                <h1 class="page-title">Manage Staff</h1>
+                <h1 class="page-title">Quản lý nhân viên</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.php"><i class="la la-home font-20"></i></a>
@@ -54,19 +54,18 @@
                 <div class="ibox-head">
                     <a href="add-staff.php"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Add"><i class="fa fa-plus font-14"></i></button></a>
                 </div>
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div class="ibox-body">
+                        <table class="table" id="example-table" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>S.N</th>
-                                    <th>First_Name</th>
-                                    <th>Last_Name</th>
-                                    <th>Age</th>
-                                    <th>Address</th>
+                                    <th>STT</th>
+                                    <th>Họ</th>
+                                    <th>Tên</th>
+                                    <th>Tuổi</th>
+                                    <th>Địa chỉ</th>
                                     <th>Email</th>
-                                    <th>Contact</th>
-                                    <th>Image</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Ảnh nhân viên</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,7 +136,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- END PAGE CONTENT-->
         </div>
 

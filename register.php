@@ -100,12 +100,7 @@
 
                 if($res == TRUE){
                     if($password == $confirm_password){
-                        $_SESSION['add'] = "<p class='text-success'>Đăng ký thành công</p>";
-                        // $_SESSION['first_name'] = $firt_name;
-                        // $_SESSION['last_name'] = $last_name;
-                        // $_SESSION['email'] = $email;
-                        // $_SESSION['phone'] = $phone;
-                        // chuyến hướng đến trang manage
+                        $_SESSION['add'] = "<p class='text-success'>Đăng ký thành công</p>"; 
                         echo("<script>location.href = '".SITEURL."login.php';</script>");
                     }
                 }else{

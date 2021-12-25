@@ -15,7 +15,7 @@
             ?> 
 
             <div class="page-heading">
-                <h1 class="page-title">Add Category</h1>
+                <h1 class="page-title">Thêm danh mục sản phẩm</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="index.html"><i class="la la-home font-20"></i></a>
@@ -26,7 +26,7 @@
             <div class="col-md-6">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Add Category</div>
+                        <div class="ibox-title"></div>
                         <div class="ibox-tools">
                             <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
                             <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
@@ -35,19 +35,19 @@
                     <div class="ibox-body">
                         <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Title</label>
+                                <label class="col-sm-2 col-form-label">Tên danh mục</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="title">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Image</label>
+                                <label class="col-sm-2 col-form-label">Ảnh</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="file" name="image">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Featured</label>
+                                <label class="col-sm-2 col-form-label">Đặc sắc</label>
                                 <div class="col-sm-10 ml-sm-auto">
                                     <label class="ui-radio ui-radio-gray">
                                         <input type="radio" name="featured" value="Yes">
@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Active</label>
+                                <label class="col-sm-2 col-form-label">Trạng thái</label>
                                 <div class="col-sm-10 ml-sm-auto">
                                     <label class="ui-radio ui-radio-gray">
                                         <input type="radio" name="active" value="Yes">
@@ -84,7 +84,7 @@
                             </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">
-                                    <input class="btn btn-info" type="submit" name="submit" value="Add Category"></input>
+                                    <input class="btn btn-info" type="submit" name="submit" value="Thêm"></input>
                                 </div>
                             </div>
                         </form>
@@ -128,7 +128,7 @@
 
                         if($upload == false){
                             // tạo sesion lưu thông báo 
-                            $_SESSION['upload'] = "<p class='text-success'>Failed to Upload Image</p>";
+                            $_SESSION['upload'] = "<p class='text-success'>Lỗi tải ảnh lên</p>";
                             // chuyến hướng đến trang manage
                             echo("<script>location.href = '".SITEURL."admin/add-cateogry.php';</script>");
                             die();
@@ -154,12 +154,12 @@
 
                 if($res==true){
                     // tạo sesion lưu thông báo 
-                    $_SESSION['add'] = "<p class='text-success'>Category Add Successfully</p>";
+                    $_SESSION['add'] = "<p class='text-success'>Thêm danh mục sản phẩm thành công</p>";
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."admin/manage-category.php';</script>");
                 }else{
                     // tạo sesion lưu thông báo 
-                    $_SESSION['add'] = "<p class='text-success'>Failed To Add Category</p>";
+                    $_SESSION['add'] = "<p class='text-success'>Lỗi thêm danh mục sản phẩm</p>";
                     // chuyến hướng đến trang manage
                     echo("<script>location.href = '".SITEURL."admin/manage-category.php';</script>");
                 }

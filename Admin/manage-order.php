@@ -16,6 +16,11 @@
                     unset($_SESSION['update']);
                 }
 
+                if(isset($_SESSION['update-stt'])){
+                    echo $_SESSION['update-stt'];
+                    unset($_SESSION['update-stt']);
+                }
+
                 if(isset($_SESSION['user-not-found'])){
                     echo $_SESSION['user-not-found'];
                     unset($_SESSION['user-not-found']);
@@ -41,16 +46,20 @@
                     </li>
                 </ol>
             </div>
-            <div class="ibox">
-                <div class="ibox-body">
-                    <div class="table-responsive">
-                        <table class="table">
+            <div class="page-content fade-in-up">
+                <div class="ibox">
+                <div class="ibox-head">
+                    <form action="excel.php" method="POST">
+                        <a href="excel.php"><button type="submit" name="export_exel"  class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Xuất excel"><i class="fa fa-file-excel-o font-14"></i></button></a>  
+                    </form>
+                </div>             
+                    <div class="ibox-body">
+                        <table class="table" id="example-table" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>STT</th>
                                     <th>Họ</th>
                                     <th>Tên</th>
-                                    <th>Địa chỉ</th>
                                     <th>Số điện thoại</th>
                                     <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
@@ -85,7 +94,6 @@
                                             $status = $rows['status']; 
                                             $first_name=$rows['first_name']; 
                                             $last_name=$rows['last_name']; 
-                                            $address = $rows['address']; 
                                             $contact = $rows['contact'];
                                             $price_total = $rows['total'];
 
@@ -96,27 +104,34 @@
                                                     <td><?php echo $sn++; ?></td>
                                                     <td><?php echo $first_name; ?></td>
                                                     <td><?php echo $last_name; ?></td>
-                                                    <td><?php echo $address; ?></td>
                                                     <td><?php echo $contact; ?></td>
                                                     <td><?php echo number_format($price_total) ; ?></td>
                                                     <td>
                                                         <?php
-                                                         if($status == 1){
-                                                             echo "Chờ xác nhận";
-                                                         }
-                                                         ?>
+                                                            if($status=="Chờ xác nhận"){
+                                                                echo "<label>$status</label>"; 
+                                                            }elseif($status=="Xác nhận"){
+                                                                echo "<label style='color: #FFC300'>$status</label>"; 
+                                                            }elseif($status=="Đang giao hàng"){
+                                                                echo "<label style='color: orange'>$status</label>"; 
+                                                            }elseif($status=="Đã giao hàng"){
+                                                                echo "<label style='color: green'>$status</label>"; 
+                                                            }elseif($status=="Đã huỷ"){
+                                                                echo "<label style='color: red'>$status</label>"; 
+                                                            }                                                                 
+                                                        ?>&ensp;
+                                                        <a href="<?php echo SITEURL; ?>admin/update-status.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Cập nhật"><i class="fa fa-pencil font-14"></i></button></a> 
                                                     </td>
+
                                                     <td><a href="manage-order-detail.php?id=<?php echo $id; ?>">Xem chi tiết</a></td>
                                                     <td>
-                                                        <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Update"><i class="fa fa-pencil font-14"></i></button></a> 
-                                                        <a href="<?php echo SITEURL; ?>admin/delete-order.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button></a>
+                                                        <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Cập nhật"><i class="fa fa-pencil font-14"></i></button></a> 
+                                                        <a href="<?php echo SITEURL; ?>admin/delete-order.php?id=<?php echo $id;?>"><button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Xoá"><i class="fa fa-trash font-14"></i></button></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                             <?php
                                         }
-                                    }else{
-
                                     }
                                 }
                             ?>
@@ -124,7 +139,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- END PAGE CONTENT-->
         </div>
 <?php include('./partials/footer.php') ?>

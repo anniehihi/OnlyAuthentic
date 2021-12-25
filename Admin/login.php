@@ -70,14 +70,14 @@
             if($count == 1){
 
                 // tạo sesion lưu thông báo 
-                $_SESSION['login'] = "<p class='text-success'>Login Successful.</p>";
+                $_SESSION['login'] = "<p class='text-success'>Đăng nhập thành công.</p>";
                 // $_SESSION['login'] = "<div class='success'>Login Successful. </div> ";
                 $_SESSION['user'] = $username;
                 // chuyến hướng đến trang manage
                 echo("<script>location.href = '".SITEURL."admin/';</script>");
             }else{  
                 // tạo sesion lưu thông báo 
-                $_SESSION['login'] = "<p class='text-danger'>User or Password Did Not Math.</p>";
+                $_SESSION['login'] = "<p class='text-danger'>Tên đăng nhập hoặc mật khẩu không chính xác.</p>";
                 // $_SESSION['login'] = "<div class='success'>Login Successful. </div> ";
                 // chuyến hướng đến trang manage
                 echo("<script>location.href = '".SITEURL."admin/login.php';</script>");

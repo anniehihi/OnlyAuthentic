@@ -1,4 +1,10 @@
 <?php include('partials-front/header.php'); ?>
+<?php
+	if(isset($_SESSION['add'])){
+		echo $_SESSION['add'];
+		unset($_SESSION['add']);
+	}
+?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
@@ -74,7 +80,7 @@
 									<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Đã bán</span></a>
 								</p>
 							</div>
-						<p class="price"><span>$<?php echo $price; ?></span></p>
+						<p class="price"><span><?php echo number_format($price); ?> VND</span></p>
 						<p><?php echo $description; ?></p>
 							</p>
 							<div class="row mt-4">
@@ -146,133 +152,78 @@
 
               <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
               	<div class="p-4">
-	              	<h3 class="mb-4">Manufactured By Adidas</h3>
-	              	<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+	              	<h3 class="mb-4">Sản xuất bởi Adidas</h3>
+	              	<p>Adidas là tập đoàn đa quốc gia đến từ nước Đức, chuyên sản xuất các mặt hàng giầy dép, quần áo, phụ kiện. Tiền thân của hãng là công ty Gebruder Dassler Schuhfabrik được ra đời vào năm 1924 bởi hai anh em nhà Dassler là Adi Dassler và Rudolf.</p>
               	</div>
               </div>
               <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
               	<div class="row p-4">
 						   		<div class="col-md-7">
-						   			<h3 class="mb-4">23 Reviews</h3>
-						   			<div class="review">
-								   		<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-								   		<div class="desc">
-								   			<h4>
-								   				<span class="text-left">Jacob Webb</span>
-								   				<span class="text-right">14 March 2018</span>
-								   			</h4>
-								   			<p class="star">
-								   				<span>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-							   					</span>
-							   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-								   			</p>
-								   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-								   		</div>
-								   	</div>
-								   	<div class="review">
-								   		<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-								   		<div class="desc">
-								   			<h4>
-								   				<span class="text-left">Jacob Webb</span>
-								   				<span class="text-right">14 March 2018</span>
-								   			</h4>
-								   			<p class="star">
-								   				<span>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-							   					</span>
-							   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-								   			</p>
-								   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-								   		</div>
-								   	</div>
-								   	<div class="review">
-								   		<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-								   		<div class="desc">
-								   			<h4>
-								   				<span class="text-left">Jacob Webb</span>
-								   				<span class="text-right">14 March 2018</span>
-								   			</h4>
-								   			<p class="star">
-								   				<span>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-								   					<i class="ion-ios-star-outline"></i>
-							   					</span>
-							   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-								   			</p>
-								   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-								   		</div>
-								   	</div>
+									   <?php
+											$sql2 = "SELECT * FROM tbl_reviews where product_id = $id"; 
+
+											$res2 = mysqli_query($conn, $sql2); 
+
+											$count2 = mysqli_num_rows($res2); 
+
+											if($count2>0){
+												while($row2 = mysqli_fetch_assoc($res2)){
+													$username = $row2['username']; 
+													$review = $row2['content'];
+													?>
+														<div class="review">
+															<div class="desc">
+																<h4>
+																	<span class="text-left"><?php echo $username;?></span>
+																</h4>
+																<p><?php echo $review; ?></p>
+															</div>
+														</div>
+													<?php
+												}
+											}
+									   ?>
 						   		</div>
 						   		<div class="col-md-4">
 						   			<div class="rating-wrap">
-							   			<h3 class="mb-4">Give a Review</h3>
-							   			<p class="star">
-							   				<span>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					(98%)
-						   					</span>
-						   					<span>20 Reviews</span>
-							   			</p>
-							   			<p class="star">
-							   				<span>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					(85%)
-						   					</span>
-						   					<span>10 Reviews</span>
-							   			</p>
-							   			<p class="star">
-							   				<span>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					(98%)
-						   					</span>
-						   					<span>5 Reviews</span>
-							   			</p>
-							   			<p class="star">
-							   				<span>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					(98%)
-						   					</span>
-						   					<span>0 Reviews</span>
-							   			</p>
-							   			<p class="star">
-							   				<span>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					<i class="ion-ios-star-outline"></i>
-							   					(98%)
-						   					</span>
-						   					<span>0 Reviews</span>
-							   			</p>
+							   			<h3 class="mb-4">Viết đánh giá</h3>
+										<form action="" method="post">
+										   	<div class="form-group row">
+												<div class="col-sm-10">
+													<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" ></textarea>
+												</div>
+											</div>
+											<div class="col-sm-10 ml-sm-auto">
+												<input class="btn btn-info" type="submit" name="submit" value="Xác nhận"></input>
+											</div>
+										</form>
+										<?php
+											if(isset($_POST['submit'])){
+												if(isset($_SESSION['user'])){
+													$user = $_SESSION['user']; 
+													$content = $_POST['content']; 
+													
+	
+													$sql2 = "INSERT INTO tbl_reviews SET
+														username = '$user', 
+														content = '$content', 
+														product_id = '$id'
+													";
+	
+													$res2 = mysqli_query($conn, $sql2); 
+	
+													if($res2 == TRUE){
+														// tạo sesion lưu thông báo 
+														$_SESSION['add'] = "<p class='text-success'>Viết đánh giá thành công</p>";
+													}else{
+														// tạo sesion lưu thông báo 
+														$_SESSION['add'] = "<p class='text-success'>Lỗi viết đánh giá</p>";
+													}
+												}else{											
+													echo '<script>alert("Bạn cần đăng nhập để đánh giá sản phẩm này!")</script>';
+												}
+											}
+										?>
 							   		</div>
 						   		</div>
 						   	</div>
@@ -297,7 +248,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Minishop</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+              <p>Những bước chân không mỏi.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -307,40 +258,41 @@
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Menu</h2>
+              <h2 class="ftco-heading-2">Đanh mục</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="#" class="py-2 d-block">Sản phẩm</a></li>
+                <li><a href="#" class="py-2 d-block">Giới thiệu</a></li>
+                <li><a href="#" class="py-2 d-block">Tạp chí</a></li>
+                <li><a href="#" class="py-2 d-block">Liên hệ</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md-4">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Help</h2>
+              <h2 class="ftco-heading-2">Trợ giúp</h2>
               <div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+	                <li><a href="#" class="py-2 d-block">Thông tin giao hàng</a></li>
+	                <li><a href="#" class="py-2 d-block">Trả hàng &amp; Trao đổi</a></li>
+	                <li><a href="#" class="py-2 d-block">Điều khoản &amp; Điều kiện</a></li>
+	                <li><a href="#" class="py-2 d-block">Chính sách bảo mật</a></li>
 	              </ul>
 	              <ul class="list-unstyled">
 	                <li><a href="#" class="py-2 d-block">FAQs</a></li>
-	                <li><a href="#" class="py-2 d-block">Contact</a></li>
+	                <li><a href="#" class="py-2 d-block">Liên hệ</a></li>
 	              </ul>
 	            </div>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Giải đáp mọi câu hỏi?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">235 Hoàng Quốc Việt, Hà Nội</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0399999999
+</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">minishop@gmail.com</span></a></li>
 	              </ul>
 	            </div>
             </div>

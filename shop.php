@@ -16,269 +16,175 @@
     		<div class="row">
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product d-flex flex-column">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay1.jpg" alt="Colorlib Template">
-		    						<div class="overlay"></div>
-		    					</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Stan Smith</a></h3>
-		    						<div class="pricing">
-			    						<p class="price"><span>$120.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product d-flex flex-column">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay2.jpg" alt="Colorlib Template">
-		    						<span class="status">50% Off</span>
-		    						<div class="overlay"></div>
-		    					</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Dép bông adilette</a></h3>
-		  							<div class="pricing">
-			    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay3.jpg" alt="Colorlib Template">
-			    					<div class="overlay"></div>
-			    				</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Giày SUPERSTAR</a></h3>
-		  							<div class="pricing">
-			    						<p class="price"><span>$120.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay4.jpg" alt="Colorlib Template">
-		    						<div class="overlay"></div>
-		    					</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Nike Free RN 2019 iD</a></h3>
-		  							<div class="pricing">
-			    						<p class="price"><span>$120.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
+					<?php
+						if(isset($_GET['id'])){
+							$category_id = $_GET['id'];
 
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product d-flex flex-column">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay5.jpg" alt="Colorlib Template">
-		    						<div class="overlay"></div>
-		    					</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Nike Free RN 2019 iD</a></h3>
-		    						<div class="pricing">
-			    						<p class="price"><span>$120.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product d-flex flex-column">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay6.jpg" alt="Colorlib Template">
-		    						<span class="status">50% Off</span>
-		    						<div class="overlay"></div>
-		    					</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Nike Free RN 2019 iD</a></h3>
-		  							<div class="pricing">
-			    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay7.jpg" alt="Colorlib Template">
-			    					<div class="overlay"></div>
-			    				</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Nike Free RN 2019 iD</a></h3>
-		  							<div class="pricing">
-			    						<p class="price"><span>$120.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
-		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/giay8.jpg" alt="Colorlib Template">
-		    						<div class="overlay"></div>
-		    					</a>
-		    					<div class="text py-3 pb-4 px-3">
-		    						<div class="d-flex">
-		    							<div class="cat">
-				    						<span>Lifestyle</span>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right mb-0">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
-		    						<h3><a href="#">Nike Free RN 2019 iD</a></h3>
-		  							<div class="pricing">
-			    						<p class="price"><span>$120.00</span></p>
-			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    						</p>
-		    					</div>
-		    				</div>
-		    			</div>
+							$sql2 = "SELECT * FROM tbl_products WHERE category_id = $category_id";
+
+							$res2 = mysqli_query($conn, $sql2);
+
+							$count2 = mysqli_num_rows($res2);
+
+							$limit = 8;
+
+							$page = ceil($count2/$limit); 
+
+							$current_page = (isset($_GET['page']) ? $_GET['page']:1); 
+
+							$start = ($current_page - 1) * $limit;
+
+							$sql4 = "SELECT * FROM tbl_products WHERE category_id = $category_id LIMIT $start,$limit";
+
+
+							$res4 = mysqli_query($conn, $sql4); 
+	
+							$count4 = mysqli_num_rows($res4);
+	
+							if($count4>0){
+								while($row2=mysqli_fetch_assoc($res4)){
+									$id = $row2['id']; 
+									$title = $row2['title'];
+									$price = $row2['price']; 
+									$image_name = $row2['image_name'];
+									?>
+										<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+											<div class="product d-flex flex-column">
+													<?php
+														if($image_name == ""){
+															echo "<div class='error'>Lỗi ảnh</div>";
+														}else{
+															?>
+																<a href="#" class="img-prod"><img class="img-fluid" src="<?php echo SITEURL; ?>img/product/<?php echo $image_name; ?>" alt="Colorlib Template">
+																	<div class="overlay"></div>
+																</a>
+															<?php
+														}
+													?>
+	
+												<div class="text py-3 pb-4 px-3">
+													<div class="d-flex">
+													</div>
+													<h3><a href=""><?php echo $title; ?></a></h3>
+													<div class="pricing">
+														<p class="price"><span><?php echo number_format($price); ?> VND</span></p>
+													</div>
+													<p class="bottom-area d-flex px-3">
+														<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+														<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+													</p>
+												</div>
+											</div>
+										</div>
+									<?php
+								}
+							}
+						}else{
+							$sql3 = "SELECT * FROM tbl_products";
+
+							$res3 = mysqli_query($conn, $sql3); 
+	
+							$count3 = mysqli_num_rows($res3);
+	
+							$limit = 8;
+
+							$page = ceil($count3/$limit); 
+
+							$current_page = (isset($_GET['page']) ? $_GET['page']:1); 
+
+							$start = ($current_page - 1) * $limit;
+
+							$sql4 = "SELECT * FROM tbl_products LIMIT $start,$limit";
+
+							$res4 = mysqli_query($conn, $sql4); 
+
+							$count4 = mysqli_num_rows($res4);
+							if($count4>0){
+								while($row3=mysqli_fetch_assoc($res4)){
+									$id = $row3['id']; 
+									$title = $row3['title'];
+									$price = $row3['price']; 
+									$image_name = $row3['image_name'];
+									?>
+										<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+											<div class="product d-flex flex-column">
+													<?php
+														if($image_name == ""){
+															echo "<div class='error'>Lỗi ảnh</div>";
+														}else{
+															?>
+																<a href="product-single.php?id=<?php echo $id; ?>" class="img-prod"><img class="img-fluid" src="<?php echo SITEURL; ?>img/product/<?php echo $image_name; ?>" alt="Colorlib Template">
+																	<div class="overlay"></div>
+																</a>
+															<?php
+														}
+													?>
+	
+												<div class="text py-3 pb-4 px-3">
+													<div class="d-flex">
+													</div>
+													<h3><a href=""><?php echo $title; ?></a></h3>
+													<div class="pricing">
+														<p class="price"><span><?php echo number_format($price); ?> VND</span></p>
+													</div>
+													<p class="bottom-area d-flex px-3">
+														<a href="cart-action.php?id=<?php echo $id; ?>" class="add-to-cart text-center py-2 mr-1"><span>Thêm vào giỏ <i class="ion-ios-add ml-1"></i></span></a>
+														<a href="product-single.php?id=<?php echo $id; ?>" class="buy-now text-center py-2">Mua ngay<span><i class="ion-ios-cart ml-1"></i></span></a>
+													</p>
+												</div>
+											</div>
+										</div>
+									<?php
+								}
+							}
+
+
+						}
+					?>
+					<?php
+
+					?>
+
 		    		</div>
 		    		<div class="row mt-5">
 		          <div class="col text-center">
 		            <div class="block-27">
 		              <ul>
-		                <li><a href="#">&lt;</a></li>
-		                <li class="active"><span>1</span></li>
-		                <li><a href="#">2</a></li>
-		                <li><a href="#">3</a></li>
-		                <li><a href="#">4</a></li>
-		                <li><a href="#">5</a></li>
-		                <li><a href="#">&gt;</a></li>
+						<?php
+							if($current_page - 1> 0){
+								?>
+		                			<li><a href="shop.php?<?php if(isset($_GET['id'])){
+										?>
+											id=<?php echo $category_id; ?>&
+										<?php
+									}?>page=<?php echo $current_page - 1; ?>">&lt;</a></li>
+								<?php
+							}
+						?>
+
+						<?php
+							for($i = 1; $i<=$page; $i++){
+								?>
+		                			<li <?php echo ($current_page == $i)? 'active':'' ?> ><a href="shop.php?<?php if(isset($_GET['id'])){
+										?>
+											id=<?php echo $category_id; ?>&
+										<?php
+									}?>page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+								<?php
+							}
+						?>
+
+						<?php
+							if($current_page + 1 <= $page){
+								?>
+									<li><a href="shop.php?<?php if(isset($_GET['id'])){
+										?>
+											id=<?php echo $category_id; ?>&
+										<?php
+									}?>page=<?php echo $current_page + 1; ?>">&gt;</a></li>
+								<?php
+							}
+						?>
 		              </ul>
 		            </div>
 		          </div>
@@ -291,106 +197,48 @@
 								<h2 class="heading">Danh mục sản phẩm</h2>
 								<div class="fancy-collapse-panel">
                   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                     <!-- <div class="panel panel-default">
-                         <div class="panel-heading" role="tab" id="headingOne">
-                             <h4 class="panel-title">
-                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Stan Smith
-                                 </a>
-                             </h4>
-                         </div>
-                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                             <div class="panel-body">
-                                 <ul>
-                                 	<li><a href="#">Sport</a></li>
-                                 	<li><a href="#">Casual</a></li>
-                                 	<li><a href="#">Running</a></li>
-                                 	<li><a href="#">Jordan</a></li>
-                                 	<li><a href="#">Soccer</a></li>
-                                 	<li><a href="#">Football</a></li>
-                                 	<li><a href="#">Lifestyle</a></li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="panel panel-default">
-                         <div class="panel-heading" role="tab" id="headingTwo">
-                             <h4 class="panel-title">
-                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Women's Shoes
-                                 </a>
-                             </h4>
-                         </div>
-                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                             <div class="panel-body">
-                                <ul>
-                                 	<li><a href="#">Sport</a></li>
-                                 	<li><a href="#">Casual</a></li>
-                                 	<li><a href="#">Running</a></li>
-                                 	<li><a href="#">Jordan</a></li>
-                                 	<li><a href="#">Soccer</a></li>
-                                 	<li><a href="#">Football</a></li>
-                                 	<li><a href="#">Lifestyle</a></li>
-                                </ul>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="panel panel-default">
-                         <div class="panel-heading" role="tab" id="headingThree">
-                             <h4 class="panel-title">
-                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accessories
-                                 </a>
-                             </h4>
-                         </div>
-                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                             <div class="panel-body">
-                                <ul>
-                                 	<li><a href="#">Jeans</a></li>
-                                 	<li><a href="#">T-Shirt</a></li>
-                                 	<li><a href="#">Jacket</a></li>
-                                 	<li><a href="#">Shoes</a></li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div> -->
-					 <a href="">Stan Smith</a>
+				  	<a href="shop.php">Tất cả</a><br>
+					 <?php
+						$sql = "SELECT * FROM tbl_category"; 
+
+						$res = mysqli_query($conn, $sql); 
+
+						$count = mysqli_num_rows($res);
+
+						if($count>0){
+							while($row=mysqli_fetch_assoc($res)){
+								$id = $row['id'];
+								$title = $row['title']; 
+
+								?>
+					 				<a href="shop.php?id=<?php echo $id; ?>"><?php echo $title; ?></a><br>
+								<?php
+							}
+						}
+					 ?>
+					
+
                   </div>
                </div>
 							</div>
 							<div class="sidebar-box-2">
-								<h2 class="heading">Mức giá</h2>
-								<form method="post" class="colorlib-form-2">
-		              <div class="row">
-		                <div class="col-md-12">
-		                  <div class="form-group">
-		                    <label for="guests">Giá từ:</label>
-		                    <div class="form-field">
-		                      <i class="icon icon-arrow-down3"></i>
-		                      <select name="people" id="people" class="form-control">
-		                        <option value="#">1</option>
-		                        <option value="#">200</option>
-		                        <option value="#">300</option>
-		                        <option value="#">400</option>
-		                        <option value="#">1000</option>
-		                      </select>
-		                    </div>
-		                  </div>
-		                </div>
-		                <div class="col-md-12">
-		                  <div class="form-group">
-		                    <label for="guests">Đến:</label>
-		                    <div class="form-field">
-		                      <i class="icon icon-arrow-down3"></i>
-		                      <select name="people" id="people" class="form-control">
-		                        <option value="#">2000</option>
-		                        <option value="#">4000</option>
-		                        <option value="#">6000</option>
-		                        <option value="#">8000</option>
-		                        <option value="#">10000</option>
-		                      </select>
-		                    </div>
-		                  </div>
-		                </div>
-		              </div>
-		            </form>
+								<form method="POST" class="colorlib-form-2" action="<?php echo SITEURL; ?>search.php">
+									<div class="row">
+										<div class="col-md-12">
+										<div class="form-group">
+											<label for="guests">Tìm sản phẩm:</label>
+											<input type="text" class="form-control" name="search">
+										</div>
+										<div class="form-group">
+											<input type="submit" value="Tìm" name="submit" class="btn btn-primary py-3 px-5">
+										</div>
+										</div>
+									</div>
+								</form>
+
+								<?php
+
+								?>
 							</div>
 						</div>
     			</div>

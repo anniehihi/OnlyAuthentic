@@ -99,7 +99,14 @@
     						<span><?php echo number_format($total); ?> VND</span>
     					</p>
     				</div>
-    				<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+					<?php
+						if(isset($_SESSION['user'])){
+							$user_id = $_SESSION['id'];
+						}
+              		?>
+    				<p class="text-center"><a href="checkout.php<?php if(isset($_SESSION['id'])){
+						echo '?id='.$user_id;
+					}  ?>" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
     			</div>
     		</div>
 			</div>
